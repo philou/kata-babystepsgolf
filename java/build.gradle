@@ -1,0 +1,71 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'com.adarshr.test-logger' version '4.0.0'
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit 5
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    // Mockito Core
+    // Uncomment if the kata is using it. Remove otherwise
+    //testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.3.1'
+
+    // ApprovalTests (for Golden Master tests)
+    // Uncomment if the kata is using it. Remove otherwise
+    // testImplementation group: 'com.approvaltests', name: 'approvaltests', version: '24.1.0'
+
+    // Gson parser
+    // Uncomment if the kata is using it. Remove otherwise
+    // implementation group: 'com.google.code.gson', name: 'gson', version: '2.10.1'
+
+    // Guava utility package
+    // Uncomment if the kata is using it. Remove otherwise
+    // implementation group: 'com.google.guava', name: 'guava', version: '33.2.0-jre'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+group = 'com.murex.xpcoaching'
+version = '1.0-SNAPSHOT'
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+testlogger {
+    theme 'standard'
+    showExceptions true
+    showStackTraces true
+    showFullStackTraces false
+    showCauses true
+    slowThreshold 5000
+    showSummary true
+    showSimpleNames false
+    showPassed true
+    showSkipped true
+    showFailed true
+    showStandardStreams false
+    showPassedStandardStreams true
+    showSkippedStandardStreams true
+    showFailedStandardStreams true
+    logLevel 'lifecycle'
+}
+

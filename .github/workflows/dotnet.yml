@@ -1,0 +1,24 @@
+name: Dotnet
+
+on:
+  push:
+    branches:
+      - '**'
+    paths:
+      - 'csharp/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Build
+        working-directory: csharp
+        run: dotnet build
+      - name: Test
+        working-directory: csharp
+        run: dotnet test

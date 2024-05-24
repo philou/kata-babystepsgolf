@@ -1,0 +1,37 @@
+# Jetbrains IDE's
+
+**/.idea/
+*.iml
+*.ipr
+*.iws
+**/out/
+modules.xml
+
+# VSCode IDE
+
+**/.vscode/
+*.code-worspace
+*.history
+*.coverage
+*.coveragexml
+
+# Visual Studio IDE
+**/.vs/
+**/Generated\ Files/
+
+# Approval Tests
+
+GoldenMasterTest.*.txt
+
+# Miscellaneous temporary Files
+
+*.bak
+*.swp
+*.diff
+*.patch
+*.log
+*.tmp
+*.zip
+*.tar.gz
+*.rar
+*.jar

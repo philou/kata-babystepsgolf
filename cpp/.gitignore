@@ -1,0 +1,5 @@
+# cpp downloaded or generated stuff
+
+**/.cmake/
+**/build/
+CMakeLists.txt.user
