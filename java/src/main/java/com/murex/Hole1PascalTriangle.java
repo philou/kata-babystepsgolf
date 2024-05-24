@@ -28,6 +28,11 @@ import java.util.stream.Collectors;
 
 class Hole1PascalTriangle {
 
+    public static void main(String[] args) {
+        int lastLine = Integer.parseInt(args[0]);
+        System.out.println(draw(lastLine));
+    }
+
     public static String draw(int lastLine) {
         List<List<Integer>> matrix = computeMatrix(lastLine);
         return convertMatrix(matrix);
