@@ -33,6 +33,20 @@ class Hole1PascalTriangle {
         System.out.println(draw(lastLine));
     }
 
+    @Deprecated
+    public static String legacyDraw(int lastLine) {
+        List<List<Integer>> matrix = computeMatrix(lastLine);
+        return legacyConvertMatrix(matrix);
+    }
+    @Deprecated
+    static String legacyConvertMatrix(List<List<Integer>> matrix){
+        return matrix.stream()
+                .map(Hole1PascalTriangle::convertLine)
+                .map(line -> line + "\n")
+                .collect(Collectors.joining(""));
+
+    }
+
     public static String draw(int lastLine) {
         List<List<Integer>> matrix = computeMatrix(lastLine);
         return convertMatrix(matrix);
@@ -42,13 +56,14 @@ class Hole1PascalTriangle {
         return integers.stream().map(String::valueOf)
                 .collect(Collectors.joining(" "));
     }
-
     static String convertMatrix(List<List<Integer>> matrix){
         return matrix.stream()
-                .map(innerLine -> convertLine(innerLine) + "\n")
+                .map(Hole1PascalTriangle::convertLine)
+                .map(line -> line + "\n")
                 .collect(Collectors.joining(""));
 
     }
+
     static List<List<Integer>> computeMatrix(int size) {
         List<List<Integer>> matrix = new ArrayList<>();
         matrix.add(List.of(1));
