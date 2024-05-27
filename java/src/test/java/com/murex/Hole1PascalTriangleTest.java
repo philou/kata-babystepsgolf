@@ -131,7 +131,6 @@ class Hole1PascalTriangleTest {
     }
 
     @Test
-    @Disabled
     void convert_matrix_of_size_1() {
         var matrix = List.of(List.of(1));
         assertEquals("1\n", Hole1PascalTriangle.convertMatrix(matrix));
