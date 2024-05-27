@@ -26,20 +26,21 @@ public class Hole2FizzBuzz {
     public static String fizzBuzz(int number) {
         String result = "";
         if (number % 105 == 0) {
-            result = "FizzBuzzBazz";
+            result += "FizzBuzzBazz";
         } else if (number % 35 == 0) {
-            result = "BuzzBazz";
+            result += "BuzzBazz";
         } else if (number % 21 == 0) {
-            result = "FizzBazz";
+            result += "FizzBazz";
         } else if (number % 15 == 0) {
-            result = "FizzBuzz";
+            result += "FizzBuzz";
         } else if (number % 3 == 0) {
-            result = "Fizz";
+            result += "Fizz";
         } else if (number % 5 == 0) {
-            result = "Buzz";
+            result += "Buzz";
         } else if (number % 7 == 0) {
-            result = "Bazz";
+            result += "Bazz";
         }
+
         if (result.isBlank()){
             result = Integer.toString(number);
         }
