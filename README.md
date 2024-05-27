@@ -101,11 +101,11 @@ If pairs commit and push using TCR on their own branch, the facilitator can even
 
 - **User Story**: As a birthday party organizer, I want to add "Bazz" for multiples of 7, so that I have a more difficult game for experienced FizzBuzz players
 - **Difficulty**: Medium
-- **Par**: 16 TODO check
+- **Par**: 22 (or only 10 if we do not count every branch separately)
 - **SPIDR Story Splitting by**: RULES, baby steps programming let us safely postpone more advanced rules, while letting players enjoy a working fun game early
 - **Attention Point**:
   - Introduce an accumulator
-  - TODO
+  - Tidy First
 
 #### 3: Numbers to LCD
 
