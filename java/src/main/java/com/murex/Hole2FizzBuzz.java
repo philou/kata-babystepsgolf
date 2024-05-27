@@ -28,10 +28,13 @@ public class Hole2FizzBuzz {
         if (number % 3 == 0) {
             result += "Fizz";
         }
-        if (number % 5 == 0) {
+
+        if (number % 15 == 0) {
+            result += "Buzz";
+        } else if (number % 5 == 0) {
             result += "Buzz";
         }
-        
+
         if (result.isBlank()) {
             result = Integer.toString(number);
         }
