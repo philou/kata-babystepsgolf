@@ -50,7 +50,6 @@ class Hole1PascalTriangleTest {
 
 
     @Test
-    @Disabled
     public void acceptance_test() {
         int lastLine = 7;
         String expected =
