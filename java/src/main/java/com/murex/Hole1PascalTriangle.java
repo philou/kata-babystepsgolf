@@ -40,12 +40,11 @@ class Hole1PascalTriangle {
     public static String draw(int lastLine) {
         List<List<Integer>> matrix = computeMatrix(lastLine);
         return convertMatrix(matrix);
-
     }
 
     public static String drawIsoceles(int lastLine) {
-        return draw(lastLine);
-
+        List<List<Integer>> matrix = computeMatrix(lastLine);
+        return convertMatrix(matrix);
     }
 
     static String convertLine(List<Integer> integers) {
@@ -54,14 +53,24 @@ class Hole1PascalTriangle {
     }
 
     static String convertMatrix(List<List<Integer>> matrix){
-        List<String> stringLines = matrix.stream()
-                .map(Hole1PascalTriangle::convertLine)
-                .toList();
+        List<String> stringLines = toStringLines(matrix);
+        return arrangeLines(stringLines);
+
+    }
+
+    private static String arrangeLines(List<String> stringLines) {
         return stringLines.stream()
                 .map(line -> line + "\n")
                 .collect(Collectors.joining(""));
-
     }
+
+    private static List<String> toStringLines(List<List<Integer>> matrix) {
+        List<String> stringLines = matrix.stream()
+                .map(Hole1PascalTriangle::convertLine)
+                .toList();
+        return stringLines;
+    }
+
     static List<List<Integer>> computeMatrix(int size) {
         List<List<Integer>> matrix = new ArrayList<>();
         matrix.add(List.of(1));
