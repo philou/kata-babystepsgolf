@@ -39,7 +39,7 @@ class Hole1PascalTriangle {
     }
 
     public static String drawIsoceles(int lastLine) {
-        return "";
+        return draw(lastLine);
     }
 
     static String convertLine(List<Integer> integers) {
