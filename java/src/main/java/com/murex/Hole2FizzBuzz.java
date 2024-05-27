@@ -24,7 +24,7 @@ package com.murex;
 
 public class Hole2FizzBuzz {
     public static String fizzBuzz(int number) {
-        String result;
+        String result = "";
         if (number % 15 == 0) {
             result = "FizzBuzz";
         } else if (number % 3 == 0) {
