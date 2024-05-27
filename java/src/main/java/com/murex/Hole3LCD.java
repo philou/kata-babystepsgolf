@@ -137,7 +137,9 @@ public class Hole3LCD {
                 digit.add(baseDigit.get(1).replace("_", " "));
             }
             digit.add(baseDigit.get(1));
-            digit.add(baseDigit.get(2).replace("_", " "));
+            for (int i = 1; i < height; i++) {
+                digit.add(baseDigit.get(2).replace("_", " "));
+            }
             digit.add(baseDigit.get(2));
             return digit;
         }
