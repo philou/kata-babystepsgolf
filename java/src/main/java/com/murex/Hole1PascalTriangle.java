@@ -37,6 +37,7 @@ class Hole1PascalTriangle {
                 .collect(Collectors.joining("")));
     }
 
+    @Deprecated
     public static String draw(int lastLine) {
         List<List<Integer>> matrix = computeMatrix(lastLine);
         return convertMatrix(matrix);
@@ -52,6 +53,7 @@ class Hole1PascalTriangle {
                 .collect(Collectors.joining(" "));
     }
 
+    @Deprecated
     static String convertMatrix(List<List<Integer>> matrix){
         List<String> stringLines = toStringLines(matrix);
         return arrangeLines(stringLines);
