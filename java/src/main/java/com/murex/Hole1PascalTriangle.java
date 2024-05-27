@@ -71,8 +71,13 @@ class Hole1PascalTriangle {
     }
     private static String arrangeLinesIsoceles(List<String> stringLines) {
         return stringLines.stream()
+                .map(line -> justify(line))
                 .map(line -> line + "\n")
                 .collect(Collectors.joining(""));
+    }
+
+    private static String justify(String line) {
+        return line;
     }
 
     private static List<String> toStringLines(List<List<Integer>> matrix) {
