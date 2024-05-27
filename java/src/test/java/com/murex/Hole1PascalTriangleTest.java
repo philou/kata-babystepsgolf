@@ -106,7 +106,7 @@ class Hole1PascalTriangleTest {
     @Disabled
     public void isosceles_triangle_lastline_0(){
         String expected = """
-                 1 
+                1
                 """;
         assertEquals(expected, Hole1PascalTriangle.drawIsoceles(0));
     }
