@@ -168,7 +168,6 @@ public class Hole3LCDTest {
     }
 
     @Test
-    @Disabled
     void can_scale_1_to_lcd_with_width_2() {
         final String expected
                 = "    \n"
@@ -178,7 +177,6 @@ public class Hole3LCDTest {
     }
 
     @Test
-    @Disabled
     void can_scale_4_to_lcd_with_width_2() {
         final String expected
                 = "    \n"
