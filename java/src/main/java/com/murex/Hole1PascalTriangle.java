@@ -33,20 +33,6 @@ class Hole1PascalTriangle {
         System.out.println(draw(lastLine));
     }
 
-    @Deprecated
-    public static String legacyDraw(int lastLine) {
-        List<List<Integer>> matrix = computeMatrix(lastLine);
-        return legacyConvertMatrix(matrix);
-    }
-    @Deprecated
-    static String legacyConvertMatrix(List<List<Integer>> matrix){
-        return matrix.stream()
-                .map(Hole1PascalTriangle::convertLine)
-                .map(line -> line + "\n")
-                .collect(Collectors.joining(""));
-
-    }
-
     public static String draw(int lastLine) {
         List<List<Integer>> matrix = computeMatrix(lastLine);
         return convertMatrix(matrix);

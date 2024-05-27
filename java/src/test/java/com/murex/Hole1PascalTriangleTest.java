@@ -32,24 +32,6 @@ import java.util.List;
 class Hole1PascalTriangleTest {
 
     @Test
-    @Deprecated
-    public void legacy_acceptance_test() {
-        int lastLine = 7;
-        String expected = """
-                1
-                1 1
-                1 2 1
-                1 3 3 1
-                1 4 6 4 1
-                1 5 10 10 5 1
-                1 6 15 20 15 6 1
-                1 7 21 35 35 21 7 1
-                """;
-        assertEquals(expected, Hole1PascalTriangle.legacyDraw(lastLine));
-    }
-
-
-    @Test
     public void acceptance_test() {
         int lastLine = 7;
         String expected =
@@ -90,43 +72,6 @@ class Hole1PascalTriangleTest {
     @Test
     public void convert_line_to_string_representation_1_1() {
         assertEquals("1 1", Hole1PascalTriangle.convertLine(List.of(1,1)));
-    }
-
-    @Test
-    @Deprecated
-    void legacy_convert_matrix_of_size_1() {
-        var matrix = List.of(List.of(1));
-        assertEquals("1\n", Hole1PascalTriangle.legacyConvertMatrix(matrix));
-    }
-
-    @Test
-    @Deprecated
-    void legacy_convert_matrix_of_size_2() {
-        var matrix = List.of(
-                List.of(1),
-                List.of(1, 1)
-        );
-        String expected = """
-                1
-                1 1
-                """;
-        assertEquals(expected, Hole1PascalTriangle.legacyConvertMatrix(matrix));
-    }
-
-    @Test
-    @Deprecated
-    void legacy_convert_matrix_of_size_3() {
-        var matrix = List.of(
-                List.of(1),
-                List.of(1, 1),
-                List.of(1, 2, 1)
-        );
-        String expected = """
-                1
-                1 1
-                1 2 1
-                """;
-        assertEquals(expected, Hole1PascalTriangle.legacyConvertMatrix(matrix));
     }
 
     @Test
