@@ -63,13 +63,13 @@ class Hole1PascalTriangle {
         int width = stringLines.get(stringLines.size() - 1).length();
 
         return stringLines.stream()
-                .map(line -> justify(line))
+                .map(line -> justify(line, width))
                 .map(line -> line + "\n")
                 .collect(Collectors.joining(""));
 
     }
 
-    private static String justify(String line) {
+    private static String justify(String line, int width) {
         return line;
     }
 
