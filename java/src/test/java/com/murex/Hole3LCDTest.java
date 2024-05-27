@@ -39,7 +39,6 @@ public class Hole3LCDTest {
     }
 
     @Test
-    @Disabled
     void acceptance_test_with_scaling() {
         final String expected
                 = "     __  __      __  __  __  __  __  __ \n"
