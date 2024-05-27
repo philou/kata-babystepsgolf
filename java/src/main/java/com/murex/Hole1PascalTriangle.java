@@ -49,9 +49,9 @@ class Hole1PascalTriangle {
 
     static String convertMatrixIsoceles(List<List<Integer>> matrix){
         List<String> stringLines = toStringLines(matrix);
-        return arrangeLinesIsoceles(stringLines);
+        return arrangeLines(stringLines);
     }
-    private static String arrangeLinesIsoceles(List<String> stringLines) {
+    private static String arrangeLines(List<String> stringLines) {
         int width = stringLines.get(stringLines.size() - 1).length();
         return stringLines.stream()
                 .map(line -> justify(line, width))
