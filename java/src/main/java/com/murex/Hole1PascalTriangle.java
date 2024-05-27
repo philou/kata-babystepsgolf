@@ -38,6 +38,10 @@ class Hole1PascalTriangle {
         return convertMatrix(matrix);
     }
 
+    public static String drawIsoceles(int lastLine) {
+        return "";
+    }
+
     static String convertLine(List<Integer> integers) {
         return integers.stream().map(String::valueOf)
                 .collect(Collectors.joining(" "));

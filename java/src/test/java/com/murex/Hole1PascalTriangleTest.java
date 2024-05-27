@@ -23,6 +23,8 @@ SOFTWARE.
 package com.murex;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -82,6 +84,66 @@ class Hole1PascalTriangleTest {
             """;
         assertEquals(expected, Hole1PascalTriangle.draw(3));
     }
+
+    @Test
+    @Disabled
+    public void isosceles_acceptance_test() {
+        int lastLine = 7;
+        String expected = """
+                         1         
+                        1 1        
+                       1 2 1       
+                      1 3 3 1      
+                     1 4 6 4 1     
+                   1 5 10 10 5 1   
+                  1 6 15 20 15 6 1 
+                1 7 21 35 35 21 7 1
+                """;
+        assertEquals(expected, Hole1PascalTriangle.drawIsoceles(lastLine));
+    }
+
+    @Test
+    @Disabled
+    public void isosceles_triangle_lastline_0(){
+        String expected = """
+                 1 
+                """;
+        assertEquals(expected, Hole1PascalTriangle.drawIsoceles(0));
+    }
+
+    @Test
+    @Disabled
+    public void isosceles_triangle_lastline_1(){
+        String expected = """
+                 1 
+                1 1
+                """;
+        assertEquals(expected, Hole1PascalTriangle.drawIsoceles(1));
+    }
+
+    @Test
+    @Disabled
+    public void isosceles_triangle_lastline_2(){
+        String expected = """
+                  1  
+                 1 1 
+                1 2 1
+                """;
+        assertEquals(expected, Hole1PascalTriangle.drawIsoceles(2));
+    }
+
+    @Test
+    @Disabled
+    void isosceles_triangle_lastline_3() {
+        String expected = """
+               1   
+              1 1  
+             1 2 1 
+            1 3 3 1
+            """;
+        assertEquals(expected, Hole1PascalTriangle.drawIsoceles(3));
+    }
+
 
     @Test
     public void compute_next_line_for_1(){
