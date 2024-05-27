@@ -107,7 +107,6 @@ public class Hole3LCDTest {
     }
 
     @Test
-    @Disabled
     void can_scale_1_to_lcd_with_height_2() {
         final String expected
                 = "   \n"

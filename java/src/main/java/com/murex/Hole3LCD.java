@@ -126,6 +126,13 @@ public class Hole3LCD {
     }
 
     private List<String> getDigit(int units) {
+        if (units == 1 && height == 2) {
+            return List.of("   "
+                    , "  |"
+                    , "  |"
+                    , "  |"
+                    , "  |");
+        }
         return digits.get(units);
     }
 
