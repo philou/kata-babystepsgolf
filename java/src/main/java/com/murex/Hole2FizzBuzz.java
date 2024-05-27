@@ -32,6 +32,9 @@ public class Hole2FizzBuzz {
         if (number % 5 == 0) {
             result += "Buzz";
         }
+        if (number % 7 == 0) {
+            result += "Bazz";
+        }
 
         if (result.isBlank()) {
             result = Integer.toString(number);

@@ -65,11 +65,11 @@ public class Hole2FizzBuzzTest {
 
     private static Stream<Arguments> provideFizzBuzzBazzCases() {
         return Stream.of(
-//                Arguments.of(105, "FizzBuzzBazz"),
-//                Arguments.of(35, "BuzzBazz"),
-//                Arguments.of(21, "FizzBazz"),
-//                Arguments.of(14, "Bazz"),
-//                Arguments.of(7, "Bazz"),
+                Arguments.of(105, "FizzBuzzBazz"),
+                Arguments.of(35, "BuzzBazz"),
+                Arguments.of(21, "FizzBazz"),
+                Arguments.of(14, "Bazz"),
+                Arguments.of(7, "Bazz"),
                 Arguments.of(1, "1")
         );
     }
