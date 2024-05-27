@@ -58,7 +58,7 @@ class Hole1PascalTriangle {
     }
     static String convertMatrix(List<List<Integer>> matrix){
         return matrix.stream()
-                .map(Hole1PascalTriangle::convertLine)
+                .map(Hole1PascalTriangle::convertLine).toList().stream()
                 .map(line -> line + "\n")
                 .collect(Collectors.joining(""));
 
