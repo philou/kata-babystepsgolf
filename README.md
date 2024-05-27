@@ -35,6 +35,7 @@ You can fill it from [here](QuickRetrospective.md)
   - original article: https://blog.cleancoder.com/uncle-bob/2013/05/27/TheTransformationPriorityPremise.html
 - SPIDR Story Splitting:
   - https://www.mountaingoatsoftware.com/uploads/blog/spidr-poster.pdf
+- [Make the change easy, then make the easy change](https://x.com/KentBeck/status/250733358307500032?lang=en)
 
 ### General
 
@@ -57,6 +58,7 @@ _The goal of this kata is to practice updating working software with the smalles
 - Learning to separate 'design' and 'feature' work
 - Understand how baby-steps support continuous refactoring within user stories
 - Understand how baby-steps support user story splitting that maximizes early value delivery
+- Tidy First
 
 ### Style & Duration
 
@@ -72,45 +74,52 @@ You can practice using either of these styles:
 - 2-hour [Randori Kata](doc/RandoriKata.md)
 - 2-hour [Mob Kata](doc/MobProgramming.md)
 
-If pairs commit and push using TCR on their own branch, the facilitator can even keep track of their progress and create a leaderboard!
+### TCR and Tidy First
+
+This kata works better with TCR, as it takes care of running the tests at every small changes and commits everytime tests are passing.
+If pairs also push using TCR on their own branch, the facilitator can even keep track of their progress and create a leaderboard!
+
+As TCR reverts any change that fails a test, we have to make sure the code to pass a new test is minimal. 
+That's why TCR goes hand in hand with the Tidy First flow. It's a small twist to the TDD cycle:
+
+1. Add (or enable, or uncomment) a test, save
+2. TCR runs:
+3. If the tests pass, TCR commits
+4. Otherwise, TCR reverts the code
+   - You should have learned what is needed to pass the tests
+   - Re-disable the failing test to get back to green (this is a current limitation of the TCR tool, which only reverts the code, without the test)
+   - _Make the change easy_: through baby-steps, prepare the code to pass the test
+   - _Do the easy change_: re-enable the test, with everything ready, you should be able to make the small code changes required to pass the test
+   - As you save, TCR will run again
+   - Depending on the tests result, Go back to 3. or 4.
 
 ### Holes
 
 #### 1: Pascal Triangle
 
 - **User Story**: As a math geek, I want to make the triangle display isosceles, so that it looks more like the traditional image we have of Pascal's Triangle
-- **Difficulty**: Easy
+- **Difficulty**: TODO
 - **Par**: 14
 - **SPIDR Story Splitting by**: INTERFACES, baby steps programming let us safely postpone improvements to the display, while letting users enjoy a working yet minimalistic display early
 - **Attention Point**:
   - We are using the Strangler pattern to change the display while keeping everything working. "legacy" code is prefixed and marked as @Deprecated. We will need to delete it at the end.
   - We prepared new tests that are marked @Disabled
   - Facilitator will demo the beginning to show what baby-steps golf looks like, how to use TCR, and Tidy First. It also makes the exercise easier.
-  - Tidy First flow:
-    1. Add (or enable) a test, save, TCR runs:
-    2. If test passes, TCR commits
-    3. Otherwise, TCR reverts the code
-      - You should have learned what is needed to pass this test
-      - Re-disable the test
-      - Make the change easy: through baby-steps, prepare the code to pass the test
-      - Do the easy change: re-enable the test, make the small code changes to pass the test
-      - Go back to 2.
   - Introducing 'identity' function or operations are a nice way to make code emerge 
 
 #### 2: FizzBuzz
 
 - **User Story**: As a birthday party organizer, I want to add "Bazz" for multiples of 7, so that I have a more difficult game for experienced FizzBuzz players
-- **Difficulty**: Medium
+- **Difficulty**: TODO
 - **Par**: 22 (or only 10 if we do not count every branch separately)
 - **SPIDR Story Splitting by**: RULES, baby steps programming let us safely postpone more advanced rules, while letting players enjoy a working fun game early
 - **Attention Point**:
   - Introduce an accumulator
-  - Tidy First
 
 #### 3: Numbers to LCD
 
 - **User Story**: As a giant display panel operator, I need to specify a size for the LCD display, so that I can display details in small text
-- **Difficulty**: Difficult
+- **Difficulty**: TODO
 - **Par**: TODO
 - **SPIDR Story Splitting by**: DATA, baby steps programming let us safely postpone the less used cases, while letting users use a working display on the most frequent input early
 - **Attention Point**:
