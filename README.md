@@ -80,10 +80,22 @@ If pairs commit and push using TCR on their own branch, the facilitator can even
 
 - **User Story**: As a math geek, I want to make the triangle display isosceles, so that it looks more like the traditional image we have of Pascal's Triangle
 - **Difficulty**: Easy
-- **Par**: TODO
+- **Par**: 14
 - **SPIDR Story Splitting by**: INTERFACES, baby steps programming let us safely postpone improvements to the display, while letting users enjoy a working yet minimalistic display early
 - **Attention Point**:
-  - TODO
+  - We are using the Strangler pattern to change the display while keeping everything working. "legacy" code is prefixed and marked as @Deprecated. We will need to delete it at the end.
+  - We prepared new tests that are marked @Disabled
+  - Facilitator will demo the beginning to show what baby-steps golf looks like, how to use TCR, and Tidy First. It also makes the exercise easier.
+  - Tidy First flow:
+    1. Add (or enable) a test, save, TCR runs:
+    2. If test passes, TCR commits
+    3. Otherwise, TCR reverts the code
+      - You should have learned what is needed to pass this test
+      - Re-disable the test
+      - Make the change easy: through baby-steps, prepare the code to pass the test
+      - Do the easy change: re-enable the test, make the small code changes to pass the test
+      - Go back to 2.
+  - Introducing 'identity' function or operations are a nice way to make code emerge 
 
 #### 2: FizzBuzz
 
