@@ -71,6 +71,7 @@ class Hole1PascalTriangle {
 
     private static String justify(String line, int width) {
         if (line.length() == 1 && width == 3) {
+            int missingSpaces = width - line.length();
             return " " + line + " ";
         }
         return line;
