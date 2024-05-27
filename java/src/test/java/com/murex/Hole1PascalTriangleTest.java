@@ -109,7 +109,6 @@ class Hole1PascalTriangleTest {
     }
 
     @Test
-    @Disabled
     public void isosceles_triangle_lastline_1(){
         String expected =
                " 1 \n"+
