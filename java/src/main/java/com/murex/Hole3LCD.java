@@ -112,12 +112,16 @@ public class Hole3LCD {
 
         do {
             final int units = number % 10;
-            lines = joinDigits(digits.get(units),
+            lines = joinDigits(getDigit(units),
                     lines);
             number /= 10;
         } while (number > 0);
 
         return lines;
+    }
+
+    private List<String> getDigit(int units) {
+        return digits.get(units);
     }
 
     private static List<String> joinDigits(List<String> firstDigit,
