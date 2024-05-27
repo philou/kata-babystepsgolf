@@ -29,13 +29,9 @@ import java.util.stream.IntStream;
 
 public class Hole3LCD {
 
-    private final static int digitTopLine = 0;
-    private final static int digitMidLine = 1;
-    private final static int digitBottomLine = 2;
-
-    private final static int digitStartChar = 0;
-    private final static int digitMidChar = 1;
-    private final static int digitEndChar = 2;
+    private final static int TOP = 0;
+    private final static int MIDDLE = 1;
+    private final static int BOTTOM = 2;
 
     private final static List<List<String>> digits =
             List.of(
@@ -90,6 +86,7 @@ public class Hole3LCD {
                             " _|"
                     )
             );
+
     private final int height;
 
     public Hole3LCD(int height) {
@@ -105,7 +102,7 @@ public class Hole3LCD {
     }
 
     static String convert(int number) {
-        return convert(number, 1);
+        return convert(number, MIDDLE);
     }
 
     private String invoke(int number) {
@@ -120,7 +117,7 @@ public class Hole3LCD {
             lines = joinDigits(getDigit(units),
                     lines);
             number /= 10;
-        } while (number > 0);
+        } while (number > TOP);
 
         return lines;
     }
@@ -128,19 +125,19 @@ public class Hole3LCD {
     private List<String> getDigit(int units) {
         final List<String> baseDigit = digits.get(units);
 
-        if (height == 2) {
+        if (height == BOTTOM) {
 
             List<String> digit = new ArrayList<>();
 
-            digit.add(baseDigit.get(0));
-            for (int i = 1; i < height; i++) {
-                digit.add(baseDigit.get(1).replace("_", " "));
+            digit.add(baseDigit.get(TOP));
+            for (int i = MIDDLE; i < height; i++) {
+                digit.add(baseDigit.get(MIDDLE).replace("_", " "));
             }
-            digit.add(baseDigit.get(1));
-            for (int i = 1; i < height; i++) {
-                digit.add(baseDigit.get(2).replace("_", " "));
+            digit.add(baseDigit.get(MIDDLE));
+            for (int i = MIDDLE; i < height; i++) {
+                digit.add(baseDigit.get(BOTTOM).replace("_", " "));
             }
-            digit.add(baseDigit.get(2));
+            digit.add(baseDigit.get(BOTTOM));
             return digit;
         }
         return baseDigit;
@@ -148,11 +145,11 @@ public class Hole3LCD {
 
     private static List<String> joinDigits(List<String> firstDigit,
                                            List<String> secondDigit) {
-        if (secondDigit.size() == 0) {
+        if (secondDigit.size() == TOP) {
             return firstDigit;
         }
 
-        return IntStream.range(0, firstDigit.size())
+        return IntStream.range(TOP, firstDigit.size())
                 .mapToObj(i -> firstDigit.get(i) + secondDigit.get(i))
                 .collect(Collectors.toList());
     }
