@@ -73,6 +73,7 @@ class Hole1PascalTriangle {
         if (line.length() == 1 && width == 3) {
             int missingSpaces = width - line.length();
             int frontMissingSpaces = missingSpaces / 2;
+            int endMissingSpaces = missingSpaces - frontMissingSpaces;
             return " " + line + " ";
         }
         return line;
