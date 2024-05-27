@@ -27,16 +27,13 @@ public class Hole2FizzBuzz {
         String result;
         if (number % 15 == 0) {
             result = "FizzBuzz";
-            return result;
         } else if (number % 3 == 0) {
             result = "Fizz";
-            return result;
         } else if (number % 5 == 0) {
             result = "Buzz";
-            return result;
         } else {
             result = Integer.toString(number);
-            return result;
         }
+        return result;
     }
 }
