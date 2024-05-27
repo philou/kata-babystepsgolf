@@ -48,47 +48,6 @@ class Hole1PascalTriangleTest {
         assertEquals(expected, Hole1PascalTriangle.legacyDraw(lastLine));
     }
 
-    @Test
-    @Deprecated
-    public void legacy_triangle_lastline_0(){
-        String expected = """
-                1
-                """;
-        assertEquals(expected, Hole1PascalTriangle.legacyDraw(0));
-    }
-
-    @Test
-    @Deprecated
-    public void legacy_triangle_lastline_1(){
-        String expected = """
-                1
-                1 1
-                """;
-        assertEquals(expected, Hole1PascalTriangle.legacyDraw(1));
-    }
-
-    @Test
-    @Deprecated
-    public void legacy_triangle_lastline_2(){
-        String expected = """
-                1
-                1 1
-                1 2 1
-                """;
-        assertEquals(expected, Hole1PascalTriangle.legacyDraw(2));
-    }
-
-    @Test
-    @Deprecated
-    void legacy_triangle_lastline_3() {
-        String expected = """
-            1
-            1 1
-            1 2 1
-            1 3 3 1
-            """;
-        assertEquals(expected, Hole1PascalTriangle.legacyDraw(3));
-    }
 
     @Test
     @Disabled
@@ -104,43 +63,6 @@ class Hole1PascalTriangleTest {
                 " 1 6 15 20 15 6 1  \n"+
                 "1 7 21 35 35 21 7 1\n";
         assertEquals(expected, Hole1PascalTriangle.draw(lastLine));
-    }
-
-    @Test
-    @Disabled
-    public void triangle_lastline_0(){
-        String expected = "1\n";
-        assertEquals(expected, Hole1PascalTriangle.draw(0));
-    }
-
-    @Test
-    @Disabled
-    public void triangle_lastline_1(){
-        String expected =
-                " 1 \n"+
-                "1 1\n";
-        assertEquals(expected, Hole1PascalTriangle.draw(1));
-    }
-
-    @Test
-    @Disabled
-    public void triangle_lastline_2(){
-        String expected =
-                "  1  \n"+
-                " 1 1 \n"+
-                "1 2 1\n";
-        assertEquals(expected, Hole1PascalTriangle.draw(2));
-    }
-
-    @Test
-    @Disabled
-    void triangle_lastline_3() {
-        String expected =
-            "   1   \n"+
-            "  1 1  \n"+
-            " 1 2 1 \n"+
-            "1 3 3 1\n";
-        assertEquals(expected, Hole1PascalTriangle.draw(3));
     }
 
     @Test
@@ -172,13 +94,15 @@ class Hole1PascalTriangleTest {
     }
 
     @Test
-    void convert_matrix_of_size_1() {
+    @Deprecated
+    void legacy_convert_matrix_of_size_1() {
         var matrix = List.of(List.of(1));
-        assertEquals("1\n", Hole1PascalTriangle.convertMatrix(matrix));
+        assertEquals("1\n", Hole1PascalTriangle.legacyConvertMatrix(matrix));
     }
 
     @Test
-    void convert_matrix_of_size_2() {
+    @Deprecated
+    void legacy_convert_matrix_of_size_2() {
         var matrix = List.of(
                 List.of(1),
                 List.of(1, 1)
@@ -187,11 +111,12 @@ class Hole1PascalTriangleTest {
                 1
                 1 1
                 """;
-        assertEquals(expected, Hole1PascalTriangle.convertMatrix(matrix));
+        assertEquals(expected, Hole1PascalTriangle.legacyConvertMatrix(matrix));
     }
 
     @Test
-    void convert_matrix_of_size_3() {
+    @Deprecated
+    void legacy_convert_matrix_of_size_3() {
         var matrix = List.of(
                 List.of(1),
                 List.of(1, 1),
@@ -202,6 +127,42 @@ class Hole1PascalTriangleTest {
                 1 1
                 1 2 1
                 """;
+        assertEquals(expected, Hole1PascalTriangle.legacyConvertMatrix(matrix));
+    }
+
+    @Test
+    @Disabled
+    void convert_matrix_of_size_1() {
+        var matrix = List.of(List.of(1));
+        assertEquals("1\n", Hole1PascalTriangle.convertMatrix(matrix));
+    }
+
+    @Test
+    @Disabled
+    void convert_matrix_of_size_2() {
+        var matrix = List.of(
+                List.of(1),
+                List.of(1, 1)
+        );
+        String expected =
+                " 1 \n"+
+                "1 1\n";
         assertEquals(expected, Hole1PascalTriangle.convertMatrix(matrix));
     }
+
+    @Test
+    @Disabled
+    void convert_matrix_of_size_3() {
+        var matrix = List.of(
+                List.of(1),
+                List.of(1, 1),
+                List.of(1, 2, 1)
+        );
+        String expected =
+                "  1  \n"+
+                " 1 1 \n"+
+                "1 2 1\n";
+        assertEquals(expected, Hole1PascalTriangle.convertMatrix(matrix));
+    }
+
 }
