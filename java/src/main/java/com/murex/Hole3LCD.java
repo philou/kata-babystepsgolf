@@ -88,13 +88,15 @@ public class Hole3LCD {
             );
 
     private final int height;
+    private final int width;
 
-    public Hole3LCD(int height) {
+    public Hole3LCD(int height, int width) {
         this.height = height;
+        this.width = width;
     }
 
     static String convert(int number, int height, int width) {
-        return new Hole3LCD(height).invoke(number);
+        return new Hole3LCD(height, width).invoke(number);
     }
 
     static String convert(int number, int height) {
@@ -123,8 +125,15 @@ public class Hole3LCD {
     }
 
     private List<String> getDigit(int units) {
-        final List<String> baseDigit = digits.get(units);
+        return scaleHeight(scaleWidth(units));
+    }
 
+    private static List<String> scaleWidth(int units) {
+        final List<String> baseDigit = digits.get(units);
+        return baseDigit;
+    }
+
+    private List<String> scaleHeight(List<String> baseDigit) {
         List<String> digit = new ArrayList<>();
 
         digit.add(baseDigit.get(TOP));
