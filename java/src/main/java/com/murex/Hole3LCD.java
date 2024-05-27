@@ -100,6 +100,10 @@ public class Hole3LCD {
     }
 
     static String convert(int number) {
+        return new Hole3LCD().invoke(number);
+    }
+
+    private String invoke(int number) {
         return joinLines(generateLines(number));
     }
 
