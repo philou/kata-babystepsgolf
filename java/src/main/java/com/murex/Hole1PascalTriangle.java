@@ -70,6 +70,7 @@ class Hole1PascalTriangle {
                 .collect(Collectors.joining(""));
     }
     private static String arrangeLinesIsoceles(List<String> stringLines) {
+        int width = stringLines.get(stringLines.size() - 1).length();
         return stringLines.stream()
                 .map(line -> justify(line))
                 .map(line -> line + "\n")
