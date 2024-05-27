@@ -60,10 +60,16 @@ class Hole1PascalTriangle {
     }
     static String convertMatrixIsoceles(List<List<Integer>> matrix){
         List<String> stringLines = toStringLines(matrix);
-        return arrangeLines(stringLines);
+        return arrangeLinesIsoceles(stringLines);
     }
 
+    @Deprecated
     private static String arrangeLines(List<String> stringLines) {
+        return stringLines.stream()
+                .map(line -> line + "\n")
+                .collect(Collectors.joining(""));
+    }
+    private static String arrangeLinesIsoceles(List<String> stringLines) {
         return stringLines.stream()
                 .map(line -> line + "\n")
                 .collect(Collectors.joining(""));
