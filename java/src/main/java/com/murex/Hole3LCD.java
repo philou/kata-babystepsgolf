@@ -102,7 +102,7 @@ public class Hole3LCD {
     }
 
     static String convert(int number) {
-        return convert(number, MIDDLE);
+        return convert(number, 1);
     }
 
     private String invoke(int number) {
