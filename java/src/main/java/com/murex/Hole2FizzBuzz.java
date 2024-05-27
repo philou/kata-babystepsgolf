@@ -25,13 +25,13 @@ package com.murex;
 public class Hole2FizzBuzz {
     public static String fizzBuzz(int number) {
         String result = "";
-        if (number % 15 == 0) {
-            result += "FizzBuzz";
-        } else if (number % 3 == 0) {
+        if (number % 3 == 0) {
             result += "Fizz";
-        } else if (number % 5 == 0) {
+        }
+        if (number % 5 == 0) {
             result += "Buzz";
         }
+        
         if (result.isBlank()) {
             result = Integer.toString(number);
         }
