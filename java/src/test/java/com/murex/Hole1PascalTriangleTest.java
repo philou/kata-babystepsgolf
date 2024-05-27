@@ -32,7 +32,7 @@ import java.util.stream.Collectors;
 class Hole1PascalTriangleTest {
 
     @Test
-    public void isosceles_acceptance_test() {
+    public void acceptance_test() {
         int lastLine = 7;
         String expected =
                 "         1         \n"+
@@ -47,13 +47,13 @@ class Hole1PascalTriangleTest {
     }
 
     @Test
-    public void isosceles_triangle_lastline_0(){
+    public void triangle_lastline_0(){
         String expected = "1\n";
         assertEquals(expected, Hole1PascalTriangle.draw(0));
     }
 
     @Test
-    public void isosceles_triangle_lastline_1(){
+    public void triangle_lastline_1(){
         String expected =
                " 1 \n"+
                "1 1\n";
@@ -61,7 +61,7 @@ class Hole1PascalTriangleTest {
     }
 
     @Test
-    public void isosceles_triangle_lastline_2(){
+    public void triangle_lastline_2(){
         String expected =
                "  1  \n"+
                " 1 1 \n"+
@@ -70,7 +70,7 @@ class Hole1PascalTriangleTest {
     }
 
     @Test
-    void isosceles_triangle_lastline_3() {
+    void triangle_lastline_3() {
         String expected =
            "   1   \n"+
            "  1 1  \n"+
