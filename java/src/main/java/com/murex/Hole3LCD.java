@@ -130,7 +130,9 @@ public class Hole3LCD {
 
     private List<String> scaleWidth(int units) {
         final List<String> baseDigit = digits.get(units);
-        return baseDigit.stream().map(line -> line.charAt(0) + line.substring(1,2).repeat(width) + line.charAt(2)).toList();
+        return baseDigit.stream()
+                .map(line -> line.charAt(0) + line.substring(1,2).repeat(width) + line.charAt(2))
+                .toList();
     }
 
     private List<String> scaleHeight(List<String> baseDigit) {
