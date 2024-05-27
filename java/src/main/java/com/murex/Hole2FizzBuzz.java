@@ -29,9 +29,7 @@ public class Hole2FizzBuzz {
             result += "Fizz";
         }
 
-        if (number % 15 == 0) {
-            result += "Buzz";
-        } else if (number % 5 == 0) {
+        if (number % 5 == 0) {
             result += "Buzz";
         }
 
