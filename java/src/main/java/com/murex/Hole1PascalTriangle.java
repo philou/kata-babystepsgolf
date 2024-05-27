@@ -44,7 +44,7 @@ class Hole1PascalTriangle {
 
     public static String drawIsoceles(int lastLine) {
         List<List<Integer>> matrix = computeMatrix(lastLine);
-        return convertMatrix(matrix);
+        return convertMatrixIsoceles(matrix);
     }
 
     static String convertLine(List<Integer> integers) {
@@ -55,7 +55,10 @@ class Hole1PascalTriangle {
     static String convertMatrix(List<List<Integer>> matrix){
         List<String> stringLines = toStringLines(matrix);
         return arrangeLines(stringLines);
-
+    }
+    static String convertMatrixIsoceles(List<List<Integer>> matrix){
+        List<String> stringLines = toStringLines(matrix);
+        return arrangeLines(stringLines);
     }
 
     private static String arrangeLines(List<String> stringLines) {
