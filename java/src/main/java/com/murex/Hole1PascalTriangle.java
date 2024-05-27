@@ -37,7 +37,7 @@ class Hole1PascalTriangle {
                 .collect(Collectors.joining("")));
     }
 
-    public static String drawIsoceles(int lastLine) {
+    public static String draw(int lastLine) {
         List<List<Integer>> matrix = computeMatrix(lastLine);
         return convertMatrix(matrix);
     }
