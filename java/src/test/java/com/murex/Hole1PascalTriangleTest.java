@@ -137,7 +137,6 @@ class Hole1PascalTriangleTest {
     }
 
     @Test
-    @Disabled
     void convert_matrix_of_size_2() {
         var matrix = List.of(
                 List.of(1),
