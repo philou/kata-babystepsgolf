@@ -28,17 +28,16 @@ public class Hole2FizzBuzz {
         if (number % 3 == 0) {
             result += "Fizz";
         }
+        if (number % 5 == 0) {
+            result += "Buzz";
+        }
 
         if (number % 105 == 0) {
-            result += "BuzzBazz";
+            result += "Bazz";
         } else if (number % 35 == 0) {
-            result += "BuzzBazz";
+            result += "Bazz";
         } else if (number % 21 == 0) {
             result += "Bazz";
-        } else if (number % 15 == 0) {
-            result += "Buzz";
-        } else if (number % 5 == 0) {
-            result += "Buzz";
         } else if (number % 7 == 0) {
             result += "Bazz";
         }
