@@ -40,15 +40,25 @@ class Hole1PascalTriangle {
 
     static String convertMatrix(List<List<Integer>> matrix){
         List<String> stringLines = toStringLines(matrix);
-        return arrangeLines(stringLines);
+        int width = textWidth(stringLines);
+        return justifyAndJoinLines(stringLines, width);
     }
 
+    private static List<String> toStringLines(List<List<Integer>> matrix) {
+        return matrix.stream()
+                .map(Hole1PascalTriangle::convertLine)
+                .toList();
+    }
     static String convertLine(List<Integer> integers) {
         return integers.stream().map(String::valueOf)
                 .collect(Collectors.joining(" "));
     }
-    private static String arrangeLines(List<String> stringLines) {
-        int width = stringLines.get(stringLines.size() - 1).length();
+
+    private static int textWidth(List<String> stringLines) {
+        return stringLines.get(stringLines.size() - 1).length();
+    }
+
+    private static String justifyAndJoinLines(List<String> stringLines, int width) {
         return stringLines.stream()
                 .map(line -> justify(line, width))
                 .map(line -> line + "\n")
@@ -60,12 +70,6 @@ class Hole1PascalTriangle {
         int frontMissingSpaces = missingSpaces/2;
         int backMissingSpaces = missingSpaces - frontMissingSpaces;
         return " ".repeat(frontMissingSpaces) + line + " ".repeat(backMissingSpaces);
-    }
-
-    private static List<String> toStringLines(List<List<Integer>> matrix) {
-        return matrix.stream()
-                .map(Hole1PascalTriangle::convertLine)
-                .toList();
     }
 
     static List<List<Integer>> computeMatrix(int size) {
