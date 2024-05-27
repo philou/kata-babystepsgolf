@@ -126,14 +126,18 @@ public class Hole3LCD {
     }
 
     private List<String> getDigit(int units) {
+        final List<String> baseDigit = digits.get(units);
+
         if (units == 1 && height == 2) {
-            return List.of("   "
-                    , "  |"
-                    , "  |"
-                    , "  |"
-                    , "  |");
+
+            return List.of(
+                    baseDigit.get(0),
+                    baseDigit.get(1),
+                    baseDigit.get(1),
+                    baseDigit.get(2),
+                    baseDigit.get(2));
         }
-        return digits.get(units);
+        return baseDigit;
     }
 
     private static List<String> joinDigits(List<String> firstDigit,
