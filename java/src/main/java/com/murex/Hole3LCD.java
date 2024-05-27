@@ -96,11 +96,11 @@ public class Hole3LCD {
     }
 
     static String convert(int number, int height) {
-        throw new UnsupportedOperationException("LCD scaling is not yet supported");
+        return new Hole3LCD().invoke(number);
     }
 
     static String convert(int number) {
-        return new Hole3LCD().invoke(number);
+        return convert(number, 1);
     }
 
     private String invoke(int number) {
