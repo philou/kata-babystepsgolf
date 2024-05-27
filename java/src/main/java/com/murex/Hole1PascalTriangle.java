@@ -78,11 +78,10 @@ class Hole1PascalTriangle {
     }
 
     private static String justify(String line, int width) {
-
-            int missingSpaces = width - line.length();
-            int frontMissingSpaces = missingSpaces/2;
-            int backMissingSpaces = missingSpaces - frontMissingSpaces;
-            return " ".repeat(frontMissingSpaces) + line + " ".repeat(backMissingSpaces);
+        int missingSpaces = width - line.length();
+        int frontMissingSpaces = missingSpaces/2;
+        int backMissingSpaces = missingSpaces - frontMissingSpaces;
+        return " ".repeat(frontMissingSpaces) + line + " ".repeat(backMissingSpaces);
     }
 
     private static List<String> toStringLines(List<List<Integer>> matrix) {
