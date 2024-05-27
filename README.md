@@ -118,7 +118,7 @@ That's why TCR goes hand in hand with the Tidy First flow. It's a small twist to
 
 #### 3: Numbers to LCD
 
-- **User Story**: As a giant display panel operator, I need to specify a size for the LCD display, so that I can display details in small text
+- **User Story**: As a giant display panel operator, I need to specify a size for the LCD display, so that I can display important information in bigger letters
 - **Difficulty**: TODO
 - **Par**: TODO
 - **SPIDR Story Splitting by**: DATA, baby steps programming let us safely postpone the less used cases, while letting users use a working display on the most frequent input early

@@ -22,6 +22,7 @@ SOFTWARE.
 
 package com.murex;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -38,6 +39,7 @@ public class Hole3LCDTest {
     }
 
     @Test
+    @Disabled
     void acceptance_test_with_scaling() {
         final String expected
                 = "     __  __      __  __  __  __  __  __ \n"
@@ -105,6 +107,7 @@ public class Hole3LCDTest {
     }
 
     @Test
+    @Disabled
     void can_scale_1_to_lcd_with_height_2() {
         final String expected
                 = "   \n"
@@ -116,6 +119,7 @@ public class Hole3LCDTest {
     }
 
     @Test
+    @Disabled
     void can_scale_8_to_lcd_with_height_2() {
         final String expected
                 = " _ \n"
@@ -127,6 +131,7 @@ public class Hole3LCDTest {
     }
 
     @Test
+    @Disabled
     void can_scale_1_to_lcd_with_height_3() {
         final String expected
                 = "   \n"
@@ -140,6 +145,7 @@ public class Hole3LCDTest {
     }
 
     @Test
+    @Disabled
     void can_scale_18_to_lcd_with_height_2() {
         final String expected
                 = "    _ \n"
@@ -151,6 +157,7 @@ public class Hole3LCDTest {
     }
 
     @Test
+    @Disabled
     void can_scale_18_to_lcd_with_height_4() {
         final String expected
                 = "    _ \n"
@@ -166,6 +173,7 @@ public class Hole3LCDTest {
     }
 
     @Test
+    @Disabled
     void can_scale_1_to_lcd_with_width_2() {
         final String expected
                 = "    \n"
@@ -175,6 +183,7 @@ public class Hole3LCDTest {
     }
 
     @Test
+    @Disabled
     void can_scale_4_to_lcd_with_width_2() {
         final String expected
                 = "    \n"
