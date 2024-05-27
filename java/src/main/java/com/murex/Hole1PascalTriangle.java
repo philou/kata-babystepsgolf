@@ -39,7 +39,7 @@ class Hole1PascalTriangle {
 
     public static String drawIsoceles(int lastLine) {
         List<List<Integer>> matrix = computeMatrix(lastLine);
-        return convertMatrixIsoceles(matrix);
+        return convertMatrix(matrix);
     }
 
     static String convertLine(List<Integer> integers) {
@@ -47,7 +47,7 @@ class Hole1PascalTriangle {
                 .collect(Collectors.joining(" "));
     }
 
-    static String convertMatrixIsoceles(List<List<Integer>> matrix){
+    static String convertMatrix(List<List<Integer>> matrix){
         List<String> stringLines = toStringLines(matrix);
         return arrangeLines(stringLines);
     }
