@@ -83,7 +83,7 @@ class Hole1PascalTriangle {
             int missingSpaces = 3 - 1;
             int frontMissingSpaces = missingSpaces/2;
             int backMissingSpaces = missingSpaces - frontMissingSpaces;
-            return " ".repeat(frontMissingSpaces) + line + " ";
+            return " ".repeat(frontMissingSpaces) + line + " ".repeat(backMissingSpaces);
         }
         return line;
     }
