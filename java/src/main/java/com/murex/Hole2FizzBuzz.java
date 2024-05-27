@@ -25,10 +25,10 @@ package com.murex;
 public class Hole2FizzBuzz {
     public static String fizzBuzz(int number) {
         String result = "";
+
         if (number % 3 == 0) {
             result += "Fizz";
         }
-
         if (number % 5 == 0) {
             result += "Buzz";
         }
@@ -36,6 +36,7 @@ public class Hole2FizzBuzz {
         if (result.isBlank()) {
             result = Integer.toString(number);
         }
+
         return result;
     }
 }
