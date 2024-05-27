@@ -47,21 +47,9 @@ class Hole1PascalTriangle {
                 .collect(Collectors.joining(" "));
     }
 
-    @Deprecated
-    static String convertMatrix(List<List<Integer>> matrix){
-        List<String> stringLines = toStringLines(matrix);
-        return arrangeLines(stringLines);
-    }
     static String convertMatrixIsoceles(List<List<Integer>> matrix){
         List<String> stringLines = toStringLines(matrix);
         return arrangeLinesIsoceles(stringLines);
-    }
-
-    @Deprecated
-    private static String arrangeLines(List<String> stringLines) {
-        return stringLines.stream()
-                .map(line -> line + "\n")
-                .collect(Collectors.joining(""));
     }
     private static String arrangeLinesIsoceles(List<String> stringLines) {
         int width = stringLines.get(stringLines.size() - 1).length();
