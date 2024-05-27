@@ -31,17 +31,26 @@ class Hole1PascalTriangle {
     public static void main(String[] args) {
         int lastLine = Integer.parseInt(args[0]);
         List<List<Integer>> matrix = computeMatrix(lastLine);
-        System.out.println(convertMatrix(matrix));
+
+        System.out.println(matrix.stream()
+                .map(innerLine -> convertLine(innerLine) + "\n")
+                .collect(Collectors.joining("")));
     }
 
     public static String draw(int lastLine) {
         List<List<Integer>> matrix = computeMatrix(lastLine);
-        return convertMatrix(matrix);
+        return matrix.stream()
+                .map(innerLine -> convertLine(innerLine) + "\n")
+                .collect(Collectors.joining(""));
+
     }
 
     public static String drawIsoceles(int lastLine) {
         List<List<Integer>> matrix = computeMatrix(lastLine);
-        return convertMatrix(matrix);
+        return matrix.stream()
+                .map(innerLine -> convertLine(innerLine) + "\n")
+                .collect(Collectors.joining(""));
+
     }
 
     static String convertLine(List<Integer> integers) {
