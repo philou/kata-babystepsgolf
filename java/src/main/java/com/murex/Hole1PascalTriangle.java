@@ -46,11 +46,7 @@ class Hole1PascalTriangle {
     }
 
     public static String drawIsoceles(int lastLine) {
-        List<List<Integer>> matrix = computeMatrix(lastLine);
-        return matrix.stream()
-                .map(innerLine -> convertLine(innerLine))
-                .map(line -> line + "\n")
-                .collect(Collectors.joining(""));
+        return draw(lastLine);
 
     }
 
