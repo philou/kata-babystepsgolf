@@ -107,7 +107,7 @@ public class Hole3LCD {
         return joinLines(generateLines(number));
     }
 
-    private static List<String> generateLines(int number) {
+    private List<String> generateLines(int number) {
         List<String> lines = new ArrayList<>();
 
         do {
