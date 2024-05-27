@@ -128,7 +128,7 @@ public class Hole3LCD {
     private List<String> getDigit(int units) {
         final List<String> baseDigit = digits.get(units);
 
-        if (units == 1 && height == 2) {
+        if (height == 2) {
 
             return List.of(
                     baseDigit.get(0),
