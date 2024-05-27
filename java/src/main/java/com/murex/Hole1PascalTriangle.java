@@ -60,9 +60,14 @@ class Hole1PascalTriangle {
         List<String> stringLines = matrix.stream()
                 .map(Hole1PascalTriangle::convertLine).toList();
         return stringLines.stream()
+                .map(line -> justify(line))
                 .map(line -> line + "\n")
                 .collect(Collectors.joining(""));
 
+    }
+
+    private static String justify(String line) {
+        return line;
     }
 
     static List<List<Integer>> computeMatrix(int size) {
