@@ -130,12 +130,13 @@ public class Hole3LCD {
 
         if (height == 2) {
 
-            return List.of(
-                    baseDigit.get(0),
-                    baseDigit.get(1).replace("_", " "),
-                    baseDigit.get(1),
-                    baseDigit.get(2).replace("_", " "),
-                    baseDigit.get(2));
+            List<String> digit = new ArrayList<>();
+            digit.add(baseDigit.get(0));
+            digit.add(baseDigit.get(1).replace("_", " "));
+            digit.add(baseDigit.get(1));
+            digit.add(baseDigit.get(2).replace("_", " "));
+            digit.add(baseDigit.get(2));
+            return digit;
         }
         return baseDigit;
     }
