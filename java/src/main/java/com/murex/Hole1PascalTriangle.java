@@ -59,6 +59,9 @@ class Hole1PascalTriangle {
     static String convertMatrix(List<List<Integer>> matrix){
         List<String> stringLines = matrix.stream()
                 .map(Hole1PascalTriangle::convertLine).toList();
+
+        int width = stringLines.get(stringLines.size() - 1).length();
+
         return stringLines.stream()
                 .map(line -> justify(line))
                 .map(line -> line + "\n")
