@@ -25,28 +25,36 @@ package com.murex;
 public class Hole2FizzBuzz {
     public static String fizzBuzz(int number) {
         if (number % 105 == 0) {
-            String result = "FizzBuzzBazz";
+            String result;
+            result = "FizzBuzzBazz";
             return result;
         } else if (number % 35 == 0) {
-            String result = "BuzzBazz";
+            String result;
+            result = "BuzzBazz";
             return result;
         } else if (number % 21 == 0) {
-            String result = "FizzBazz";
+            String result;
+            result = "FizzBazz";
             return result;
         } else if (number % 15 == 0) {
-            String result = "FizzBuzz";
+            String result;
+            result = "FizzBuzz";
             return result;
         } else if (number % 3 == 0) {
-            String result = "Fizz";
+            String result;
+            result = "Fizz";
             return result;
         } else if (number % 5 == 0) {
-            String result = "Buzz";
+            String result;
+            result = "Buzz";
             return result;
         } else if (number % 7 == 0) {
-            String result = "Bazz";
+            String result;
+            result = "Bazz";
             return result;
         } else {
-            String result = Integer.toString(number);
+            String result;
+            result = Integer.toString(number);
             return result;
         }
     }
