@@ -78,7 +78,7 @@ If pairs commit and push using TCR on their own branch, the facilitator can even
 
 #### 1: Pascal Triangle
 
-- **Feature**: Make the triangle display isosceles
+- **User Story**: As a math geek, I want to make the triangle display isosceles, so that it looks more like the traditional image we have of Pascal's Triangle
 - **Difficulty**: Easy
 - **Par**: TODO
 - **SPIDR Story Splitting by**: INTERFACES, baby steps programming let us safely postpone improvements to the display, while letting users enjoy a working yet minimalistic display early
@@ -87,7 +87,7 @@ If pairs commit and push using TCR on their own branch, the facilitator can even
 
 #### 2: FizzBuzz
 
-- **Feature**: Add Bazz for multiples of 7
+- **User Story**: As a birthday party organizer, I want to add "Bazz" for multiples of 7, so that I have a more difficult game for experienced FizzBuzz players
 - **Difficulty**: Medium
 - **Par**: 16 TODO check
 - **SPIDR Story Splitting by**: RULES, baby steps programming let us safely postpone more advanced rules, while letting players enjoy a working fun game early
@@ -97,7 +97,7 @@ If pairs commit and push using TCR on their own branch, the facilitator can even
 
 #### 3: Numbers to LCD
 
-- **Feature**: Add a size parameter to the LCD display
+- **User Story**: As a giant display panel operator, I need to specify a size for the LCD display, so that I can display details in small text
 - **Difficulty**: Difficult
 - **Par**: TODO
 - **SPIDR Story Splitting by**: DATA, baby steps programming let us safely postpone the less used cases, while letting users use a working display on the most frequent input early
