@@ -39,9 +39,7 @@ class Hole1PascalTriangle {
 
     public static String draw(int lastLine) {
         List<List<Integer>> matrix = computeMatrix(lastLine);
-        return matrix.stream()
-                .map(innerLine -> convertLine(innerLine) + "\n")
-                .collect(Collectors.joining(""));
+        return convertMatrix(matrix);
 
     }
 
