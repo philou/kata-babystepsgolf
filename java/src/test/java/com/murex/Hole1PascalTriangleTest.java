@@ -28,7 +28,6 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 class Hole1PascalTriangleTest {
 
@@ -46,10 +45,7 @@ class Hole1PascalTriangleTest {
                 1 7 21 35 35 21 7 1
                 """;
         List<List<Integer>> matrix = Hole1PascalTriangle.computeMatrix(lastLine);
-
-        assertEquals(expected, matrix.stream()
-                .map(innerLine -> Hole1PascalTriangle.convertLine(innerLine) + "\n")
-                .collect(Collectors.joining("")));
+        assertEquals(expected, Hole1PascalTriangle.convertMatrix(matrix));
     }
 
     @Test
@@ -58,10 +54,7 @@ class Hole1PascalTriangleTest {
                 1
                 """;
         List<List<Integer>> matrix = Hole1PascalTriangle.computeMatrix(0);
-
-        assertEquals(expected, matrix.stream()
-                .map(innerLine -> Hole1PascalTriangle.convertLine(innerLine) + "\n")
-                .collect(Collectors.joining("")));
+        assertEquals(expected, Hole1PascalTriangle.convertMatrix(matrix));
     }
 
     @Test
@@ -71,10 +64,7 @@ class Hole1PascalTriangleTest {
                 1 1
                 """;
         List<List<Integer>> matrix = Hole1PascalTriangle.computeMatrix(1);
-
-        assertEquals(expected, matrix.stream()
-                .map(innerLine -> Hole1PascalTriangle.convertLine(innerLine) + "\n")
-                .collect(Collectors.joining("")));
+        assertEquals(expected, Hole1PascalTriangle.convertMatrix(matrix));
     }
 
     @Test
@@ -85,10 +75,7 @@ class Hole1PascalTriangleTest {
                 1 2 1
                 """;
         List<List<Integer>> matrix = Hole1PascalTriangle.computeMatrix(2);
-
-        assertEquals(expected, matrix.stream()
-                .map(innerLine -> Hole1PascalTriangle.convertLine(innerLine) + "\n")
-                .collect(Collectors.joining("")));
+        assertEquals(expected, Hole1PascalTriangle.convertMatrix(matrix));
     }
 
     @Test
@@ -100,10 +87,7 @@ class Hole1PascalTriangleTest {
             1 3 3 1
             """;
         List<List<Integer>> matrix = Hole1PascalTriangle.computeMatrix(3);
-
-        assertEquals(expected, matrix.stream()
-                .map(innerLine -> Hole1PascalTriangle.convertLine(innerLine) + "\n")
-                .collect(Collectors.joining("")));
+        assertEquals(expected, Hole1PascalTriangle.convertMatrix(matrix));
     }
 
     @Test
@@ -196,10 +180,7 @@ class Hole1PascalTriangleTest {
     @Test
     void convert_matrix_of_size_1() {
         var matrix = List.of(List.of(1));
-
-        assertEquals("1\n", matrix.stream()
-                .map(innerLine -> Hole1PascalTriangle.convertLine(innerLine) + "\n")
-                .collect(Collectors.joining("")));
+        assertEquals("1\n", Hole1PascalTriangle.convertMatrix(matrix));
     }
 
     @Test
@@ -212,10 +193,7 @@ class Hole1PascalTriangleTest {
                 1
                 1 1
                 """;
-
-        assertEquals(expected, matrix.stream()
-                .map(innerLine -> Hole1PascalTriangle.convertLine(innerLine) + "\n")
-                .collect(Collectors.joining("")));
+        assertEquals(expected, Hole1PascalTriangle.convertMatrix(matrix));
     }
 
     @Test
@@ -230,9 +208,6 @@ class Hole1PascalTriangleTest {
                 1 1
                 1 2 1
                 """;
-
-        assertEquals(expected, matrix.stream()
-                .map(innerLine -> Hole1PascalTriangle.convertLine(innerLine) + "\n")
-                .collect(Collectors.joining("")));
+        assertEquals(expected, Hole1PascalTriangle.convertMatrix(matrix));
     }
 }
