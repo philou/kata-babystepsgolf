@@ -132,9 +132,9 @@ public class Hole3LCD {
 
             return List.of(
                     baseDigit.get(0),
+                    baseDigit.get(1).replace("_", " "),
                     baseDigit.get(1),
-                    baseDigit.get(1),
-                    baseDigit.get(2),
+                    baseDigit.get(2).replace("_", " "),
                     baseDigit.get(2));
         }
         return baseDigit;
