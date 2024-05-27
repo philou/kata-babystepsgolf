@@ -38,14 +38,14 @@ class Hole1PascalTriangle {
         return convertMatrix(matrix);
     }
 
-    static String convertLine(List<Integer> integers) {
-        return integers.stream().map(String::valueOf)
-                .collect(Collectors.joining(" "));
-    }
-
     static String convertMatrix(List<List<Integer>> matrix){
         List<String> stringLines = toStringLines(matrix);
         return arrangeLines(stringLines);
+    }
+
+    static String convertLine(List<Integer> integers) {
+        return integers.stream().map(String::valueOf)
+                .collect(Collectors.joining(" "));
     }
     private static String arrangeLines(List<String> stringLines) {
         int width = stringLines.get(stringLines.size() - 1).length();
