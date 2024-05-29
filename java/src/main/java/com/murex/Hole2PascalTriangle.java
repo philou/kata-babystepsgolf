@@ -26,27 +26,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class Hole1PascalTriangle {
-
-    public static void main(String[] args) {
-        int lastLine = Integer.parseInt(args[0]);
-        System.out.println(draw(lastLine));
-    }
+class Hole2PascalTriangle {
 
     @Deprecated
     public static String legacyDraw(int lastLine) {
         List<List<Integer>> matrix = computeMatrix(lastLine);
         return legacyConvertMatrix(matrix);
     }
+
     @Deprecated
     static String legacyConvertMatrix(List<List<Integer>> matrix){
         return matrix.stream()
-                .map(Hole1PascalTriangle::convertLine)
+                .map(Hole2PascalTriangle::convertLine)
                 .map(line -> line + "\n")
                 .collect(Collectors.joining(""));
 
     }
-
     public static String draw(int lastLine) {
         List<List<Integer>> matrix = computeMatrix(lastLine);
         return convertMatrix(matrix);
@@ -56,14 +51,14 @@ class Hole1PascalTriangle {
         return integers.stream().map(String::valueOf)
                 .collect(Collectors.joining(" "));
     }
+
     static String convertMatrix(List<List<Integer>> matrix){
         return matrix.stream()
-                .map(Hole1PascalTriangle::convertLine)
+                .map(Hole2PascalTriangle::convertLine)
                 .map(line -> line + "\n")
                 .collect(Collectors.joining(""));
 
     }
-
     static List<List<Integer>> computeMatrix(int size) {
         List<List<Integer>> matrix = new ArrayList<>();
         matrix.add(List.of(1));
@@ -72,6 +67,7 @@ class Hole1PascalTriangle {
         }
         return matrix;
     }
+
     static List<Integer> computeNext(List<Integer> currentLine) {
         var result = new ArrayList<Integer>();
         result.add(1);
@@ -82,5 +78,10 @@ class Hole1PascalTriangle {
 
         result.add(1);
         return result;
+    }
+
+    public static void main(String[] args) {
+        int lastLine = Integer.parseInt(args[0]);
+        System.out.println(draw(lastLine));
     }
 }

@@ -22,7 +22,6 @@ SOFTWARE.
 
 package com.murex;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -31,12 +30,12 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Hole2FizzBuzzTest {
+public class Hole1FizzBuzzTest {
 
     @ParameterizedTest
     @MethodSource("provideFizzBuzzCases")
     void testFizzBuzz(int input, String expected) {
-        assertEquals(expected, Hole2FizzBuzz.fizzBuzz(input));
+        assertEquals(expected, Hole1FizzBuzz.fizzBuzz(input));
     }
 
     private static Stream<Arguments> provideFizzBuzzCases() {
@@ -60,7 +59,7 @@ public class Hole2FizzBuzzTest {
     @ParameterizedTest
     @MethodSource("provideFizzBuzzBazzCases")
     void testFizzBuzzBazz(int input, String expected) {
-        assertEquals(expected, Hole2FizzBuzz.fizzBuzz(input));
+        assertEquals(expected, Hole1FizzBuzz.fizzBuzz(input));
     }
 
     private static Stream<Arguments> provideFizzBuzzBazzCases() {

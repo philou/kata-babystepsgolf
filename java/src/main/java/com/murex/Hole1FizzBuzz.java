@@ -22,7 +22,7 @@ SOFTWARE.
 
 package com.murex;
 
-public class Hole2FizzBuzz {
+public class Hole1FizzBuzz {
     public static String fizzBuzz(int number) {
         if (number % 15 == 0) {
             return "FizzBuzz";

@@ -93,28 +93,29 @@ That's why TCR goes hand in hand with the Tidy First flow. It's a small twist to
    - As you save, TCR will run again
    - Depending on the tests result, Go back to 3. or 4.
 
+Facilitator will demo the beginning to show what baby-steps golf looks like, how to use TCR, and Tidy First. It also makes the exercise easier.
+
 ### Holes
 
-#### 1: Pascal Triangle
+#### 1: FizzBuzz
+
+- **User Story**: As a birthday party organizer, I want to add "Bazz" for multiples of 7, so that I have a more difficult game for experienced FizzBuzz players
+- **Difficulty**: Easy
+- **Par**: 10 (or 22 if we count every similar branch change separately)
+- **SPIDR Story Splitting by**: RULES, baby steps programming let us safely postpone more advanced rules, while letting players enjoy a working fun game early
+- **Attention Point**:
+  - We prepared new tests that are marked @Disabled
+  - Introduce an accumulator
+
+#### 2: Pascal Triangle
 
 - **User Story**: As a math geek, I want to make the triangle display isosceles, so that it looks more like the traditional image we have of Pascal's Triangle
-- **Difficulty**: TODO
+- **Difficulty**: Medium
 - **Par**: 14
 - **SPIDR Story Splitting by**: INTERFACES, baby steps programming let us safely postpone improvements to the display, while letting users enjoy a working yet minimalistic display early
 - **Attention Point**:
   - We are using the Strangler pattern to change the display while keeping everything working. "legacy" code is prefixed and marked as @Deprecated. We will need to delete it at the end.
-  - We prepared new tests that are marked @Disabled
-  - Facilitator will demo the beginning to show what baby-steps golf looks like, how to use TCR, and Tidy First. It also makes the exercise easier.
-  - Introducing 'identity' function or operations are a nice way to make code emerge 
-
-#### 2: FizzBuzz
-
-- **User Story**: As a birthday party organizer, I want to add "Bazz" for multiples of 7, so that I have a more difficult game for experienced FizzBuzz players
-- **Difficulty**: TODO
-- **Par**: 22 (or only 10 if we do not count every branch separately)
-- **SPIDR Story Splitting by**: RULES, baby steps programming let us safely postpone more advanced rules, while letting players enjoy a working fun game early
-- **Attention Point**:
-  - Introduce an accumulator
+  - Introducing 'identity' function or operations are a nice way to make code emerge
 
 #### 3: Numbers to LCD
 
@@ -123,9 +124,8 @@ That's why TCR goes hand in hand with the Tidy First flow. It's a small twist to
 - **Par**: 21
 - **SPIDR Story Splitting by**: DATA, baby steps programming let us safely postpone the less used cases, while letting users use a working display on the most frequent input early
 - **Attention Point**:
-    - Object method pattern
-    - Introducing 'identity' function or operations are a nice way to make code emerge
-
+  - Object method pattern
+  - Encapsulate accessor
 
 ### Source Files
 

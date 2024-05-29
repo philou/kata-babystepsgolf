@@ -29,7 +29,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-class Hole1PascalTriangleTest {
+class Hole2PascalTriangleTest {
 
     @Test
     @Deprecated
@@ -45,7 +45,7 @@ class Hole1PascalTriangleTest {
                 1 6 15 20 15 6 1
                 1 7 21 35 35 21 7 1
                 """;
-        assertEquals(expected, Hole1PascalTriangle.legacyDraw(lastLine));
+        assertEquals(expected, Hole2PascalTriangle.legacyDraw(lastLine));
     }
 
 
@@ -62,42 +62,42 @@ class Hole1PascalTriangleTest {
                 "   1 5 10 10 5 1   \n"+
                 " 1 6 15 20 15 6 1  \n"+
                 "1 7 21 35 35 21 7 1\n";
-        assertEquals(expected, Hole1PascalTriangle.draw(lastLine));
+        assertEquals(expected, Hole2PascalTriangle.draw(lastLine));
     }
 
     @Test
     public void compute_next_line_for_1(){
         List<Integer> expected = List.of(1, 1);
-        assertEquals(expected, Hole1PascalTriangle.computeNext(List.of(1)));
+        assertEquals(expected, Hole2PascalTriangle.computeNext(List.of(1)));
     }
 
     @Test
     public void compute_next_line_for_1_1(){
         List<Integer> expected = List.of(1, 2, 1);
-        assertEquals(expected, Hole1PascalTriangle.computeNext(List.of(1, 1)));
+        assertEquals(expected, Hole2PascalTriangle.computeNext(List.of(1, 1)));
     }
     @Test
     public void compute_next_line_for_1_3_3_1(){
         List<Integer> expected = List.of(1, 4, 6, 4, 1);
-        assertEquals(expected, Hole1PascalTriangle.computeNext(List.of(1,3, 3, 1)));
+        assertEquals(expected, Hole2PascalTriangle.computeNext(List.of(1,3, 3, 1)));
     }
 
     @Test
     public void compute_next_line_for_1_2_1(){
         List<Integer> expected = List.of(1, 3, 3, 1);
-        assertEquals(expected, Hole1PascalTriangle.computeNext(List.of(1, 2, 1)));
+        assertEquals(expected, Hole2PascalTriangle.computeNext(List.of(1, 2, 1)));
     }
 
     @Test
     public void convert_line_to_string_representation_1_1() {
-        assertEquals("1 1", Hole1PascalTriangle.convertLine(List.of(1,1)));
+        assertEquals("1 1", Hole2PascalTriangle.convertLine(List.of(1,1)));
     }
 
     @Test
     @Deprecated
     void legacy_convert_matrix_of_size_1() {
         var matrix = List.of(List.of(1));
-        assertEquals("1\n", Hole1PascalTriangle.legacyConvertMatrix(matrix));
+        assertEquals("1\n", Hole2PascalTriangle.legacyConvertMatrix(matrix));
     }
 
     @Test
@@ -111,7 +111,7 @@ class Hole1PascalTriangleTest {
                 1
                 1 1
                 """;
-        assertEquals(expected, Hole1PascalTriangle.legacyConvertMatrix(matrix));
+        assertEquals(expected, Hole2PascalTriangle.legacyConvertMatrix(matrix));
     }
 
     @Test
@@ -127,14 +127,14 @@ class Hole1PascalTriangleTest {
                 1 1
                 1 2 1
                 """;
-        assertEquals(expected, Hole1PascalTriangle.legacyConvertMatrix(matrix));
+        assertEquals(expected, Hole2PascalTriangle.legacyConvertMatrix(matrix));
     }
 
     @Test
     @Disabled
     void convert_matrix_of_size_1() {
         var matrix = List.of(List.of(1));
-        assertEquals("1\n", Hole1PascalTriangle.convertMatrix(matrix));
+        assertEquals("1\n", Hole2PascalTriangle.convertMatrix(matrix));
     }
 
     @Test
@@ -147,7 +147,7 @@ class Hole1PascalTriangleTest {
         String expected =
                 " 1 \n"+
                 "1 1\n";
-        assertEquals(expected, Hole1PascalTriangle.convertMatrix(matrix));
+        assertEquals(expected, Hole2PascalTriangle.convertMatrix(matrix));
     }
 
     @Test
@@ -162,7 +162,7 @@ class Hole1PascalTriangleTest {
                 "  1  \n"+
                 " 1 1 \n"+
                 "1 2 1\n";
-        assertEquals(expected, Hole1PascalTriangle.convertMatrix(matrix));
+        assertEquals(expected, Hole2PascalTriangle.convertMatrix(matrix));
     }
 
 }
