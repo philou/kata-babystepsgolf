@@ -127,8 +127,13 @@ public class Hole3LCD {
                 .collect(Collectors.toList());
     }
 
-
     private static String joinLines(List<String> lines) {
         return String.join("\n", lines);
     }
-}
+
+    public static void main(String[] args) {
+        int number = Integer.parseInt(args[0]);
+        int height = Integer.parseInt(args[1]);
+        int width = Integer.parseInt(args[2]);
+        System.out.println(convert(number/*, height, width*/));
+    }}
