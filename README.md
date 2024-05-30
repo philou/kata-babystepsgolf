@@ -103,10 +103,10 @@ This example is used to demo the concept of baby-steps golf to participants
 
 - **User Story**: As a bowling shop owner, I want to add spares to my scoring algorithm, so that the players can have more fun!
 - **Difficulty**: Easy
-- **Par**: TODO
+- **Par**: 7
 - **SPIDR Story Splitting by**: RULES, baby steps programming let us safely postpone more advanced rules, while letting players enjoy a working fun game early
 - **Attention Point**:
-    - Conditional mitosis
+    - Duplicate if branch
 
 #### 1: FizzBuzz
 
