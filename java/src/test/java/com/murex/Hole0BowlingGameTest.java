@@ -65,7 +65,6 @@ public class Hole0BowlingGameTest {
     }
 
     @Test
-    @Disabled
     void one_spare_then_gutter() {
         assertEquals(10, Hole0BowlingGame.score(2, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
     }
