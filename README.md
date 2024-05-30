@@ -97,6 +97,17 @@ Facilitator will demo the beginning to show what baby-steps golf looks like, how
 
 ### Holes
 
+#### 0: Bowling Game Score (Demo)
+
+This example is used to demo the concept of baby-steps golf to participants
+
+- **User Story**: As a bowling shop owner, I want to add spares to my scoring algorithm, so that the players can have more fun!
+- **Difficulty**: Easy
+- **Par**: TODO
+- **SPIDR Story Splitting by**: RULES, baby steps programming let us safely postpone more advanced rules, while letting players enjoy a working fun game early
+- **Attention Point**:
+    - Conditional mitosis
+
 #### 1: FizzBuzz
 
 - **User Story**: As a birthday party organizer, I want to add "Bazz" for multiples of 7, so that I have a more difficult game for experienced FizzBuzz players
