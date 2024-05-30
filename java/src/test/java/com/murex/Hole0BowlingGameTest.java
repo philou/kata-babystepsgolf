@@ -74,19 +74,16 @@ public class Hole0BowlingGameTest {
     }
 
     @Test
-    @Disabled
     void it_should_not_be_considered_a_spare_if_in_different_frames() {
         assertEquals(13, Hole0BowlingGame.score(0, 0, 0, 4, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
     }
 
     @Test
-    @Disabled
     void one_spare_in_last_frame_should_add_extra_roll() {
         assertEquals(13, Hole0BowlingGame.score(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 3));
     }
 
     @Test
-    @Disabled
     void all_fives() {
         assertEquals(150, Hole0BowlingGame.score(5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5));
     }
