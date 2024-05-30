@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Hole0BowlingGameTest {
 
     @Test
-    @Disabled
     void acceptance_test() {
         assertEquals(133, Hole0BowlingGame.score(1, 4, 4, 5, 6, 4, 5, 5, 10, 0, 1, 7, 3, 6, 4, 10, 2, 8, 6));
     }
