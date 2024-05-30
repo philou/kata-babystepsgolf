@@ -69,7 +69,6 @@ public class Hole0BowlingGameTest {
     }
 
     @Test
-    @Disabled
     void one_spare_at_second_frame() {
         assertEquals(16, Hole0BowlingGame.score(0, 0, 4, 6, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
     }
