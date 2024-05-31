@@ -23,8 +23,8 @@ public class Hole0BowlingGame {
         return score;
     }
 
-    private static int spareBonus(int[] rolls, int iRoll) {
-        return rolls[iRoll + 2];
+    private static boolean isStrike(int[] rolls, int iRoll) {
+        return rolls[iRoll] == TOTAL_PINS;
     }
 
     private static boolean isSpare(int[] rolls, int iRoll) {
@@ -35,7 +35,7 @@ public class Hole0BowlingGame {
         return rolls[iRoll + 1] + rolls[iRoll + 2];
     }
 
-    private static boolean isStrike(int[] rolls, int iRoll) {
-        return rolls[iRoll] == TOTAL_PINS;
+    private static int spareBonus(int[] rolls, int iRoll) {
+        return rolls[iRoll + 2];
     }
 }
