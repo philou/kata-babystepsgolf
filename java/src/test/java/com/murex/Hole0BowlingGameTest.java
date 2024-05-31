@@ -59,7 +59,6 @@ public class Hole0BowlingGameTest {
     }
 
     @Test
-    @Disabled
     void one_spare() {
         assertEquals(18, Hole0BowlingGame.score(2, 8, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
     }
