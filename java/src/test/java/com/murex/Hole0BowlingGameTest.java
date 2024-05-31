@@ -79,7 +79,6 @@ public class Hole0BowlingGameTest {
     }
 
     @Test
-    @Disabled
     void one_spare_in_last_frame_should_add_extra_roll() {
         assertEquals(13, Hole0BowlingGame.score(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 3));
     }
