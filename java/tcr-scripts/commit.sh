@@ -1,23 +1,23 @@
 #!/usr/bin/env sh
 
 # Define a list of valid conventional commit types
-valid_types=("feat" "refactor" "test" "fix" "chore" "docs" "style" "perf" "build" "ci" "revert")
+valid_types="feat refactor test fix chore docs style perf build ci revert"
 
 # Function to check if a given type is valid
 is_valid_commit_type() {
-  local type="$1"
-  for valid_type in "${valid_types[@]}"; do
-    if [ "$type" == "$valid_type" ]; then
+  type="$1"
+  for valid_type in $valid_types; do
+    if [ "$type" = "$valid_type" ]; then
       return 0 # Valid commit type
     fi
-  end
+  done
   return 1 # Invalid commit type
 }
 
 # Check that a commit message is provided
 if [ "$#" -ne 3 ]; then
   echo "Error: usage: ./tcr.sh <commit type> <baby step type> <details>"
-  echo "  - commit type: one of ${valid_types[*]} (cf https://www.conventionalcommits.org/en/v1.0.0/)"
+  echo "  - commit type: one of: [$valid_types] (cf https://www.conventionalcommits.org/en/v1.0.0/)"
   echo "  - baby step type:"
   echo "    - refactorings: https://refactoring.com/catalog/"
   echo "    - features: https://en.wikipedia.org/wiki/Transformation_Priority_Premise"
@@ -32,7 +32,7 @@ commit_details="$3"
 
 # Validate the commit_type
 if ! is_valid_commit_type "$commit_type"; then
-  echo "Error: The commit_type must be one of the following: ${valid_types[*]} (cf https://www.conventionalcommits.org/en/v1.0.0/)"
+  echo "Error: The commit_type must be one of the following: [$valid_types] (cf https://www.conventionalcommits.org/en/v1.0.0/)"
   exit 1
 fi
 
