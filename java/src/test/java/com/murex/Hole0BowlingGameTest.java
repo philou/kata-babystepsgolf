@@ -84,7 +84,6 @@ public class Hole0BowlingGameTest {
     }
 
     @Test
-    @Disabled
     void all_fives() {
         assertEquals(150, Hole0BowlingGame.score(5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5));
     }
