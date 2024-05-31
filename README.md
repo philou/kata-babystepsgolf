@@ -104,8 +104,8 @@ This example is used to demo the concept of baby-steps golf to participants
 - **User Story**: As a bowling shop owner, I want to add spares to my scoring algorithm, so that the players can have more fun!
 - **Difficulty**: Easy
 - **Par**: 7
-- **SPIDR Story Splitting by**: RULES, baby steps programming let us safely postpone more advanced rules, while letting players enjoy a working fun game early
-- **Attention Point**:
+- **Story Split by**: RULES, baby steps programming let us safely postpone more advanced rules, while letting players enjoy a working fun game early
+- **Hints**:
     - Duplicate if branch
 
 #### 1: FizzBuzz
@@ -113,8 +113,8 @@ This example is used to demo the concept of baby-steps golf to participants
 - **User Story**: As a birthday party organizer, I want to add "Bazz" for multiples of 7, so that I have a more difficult game for experienced FizzBuzz players
 - **Difficulty**: Easy
 - **Par**: 10 (or 22 if we count every similar branch change separately)
-- **SPIDR Story Splitting by**: RULES, baby steps programming let us safely postpone more advanced rules, while letting players enjoy a working fun game early
-- **Attention Point**:
+- **Story Split by**: RULES, baby steps programming let us safely postpone more advanced rules, while letting players enjoy a working fun game early
+- **Hints**:
   - We prepared new tests that are marked @Disabled
   - Introduce an accumulator
 
@@ -123,8 +123,8 @@ This example is used to demo the concept of baby-steps golf to participants
 - **User Story**: As a math geek, I want to make the triangle display isosceles, so that it looks more like the traditional image we have of Pascal's Triangle
 - **Difficulty**: Medium
 - **Par**: 14
-- **SPIDR Story Splitting by**: INTERFACES, baby steps programming let us safely postpone improvements to the display, while letting users enjoy a working yet minimalistic display early
-- **Attention Point**:
+- **Story Split by**: INTERFACES, baby steps programming let us safely postpone improvements to the display, while letting users enjoy a working yet minimalistic display early
+- **Hints**:
   - We are using the Strangler pattern to change the display while keeping everything working. "legacy" code is prefixed and marked as @Deprecated. We will need to delete it at the end.
   - Introducing 'identity' function or operations are a nice way to make code emerge
 
@@ -133,8 +133,8 @@ This example is used to demo the concept of baby-steps golf to participants
 - **User Story**: As a giant display panel operator, I need to specify a size for the LCD display, so that I can display important information in bigger letters
 - **Difficulty**: Difficult
 - **Par**: 21
-- **SPIDR Story Splitting by**: DATA, baby steps programming let us safely postpone the less used cases, while letting users use a working display on the most frequent input early
-- **Attention Point**:
+- **Story Split by**: DATA, baby steps programming let us safely postpone the less used cases, while letting users use a working display on the most frequent input early
+- **Hints**:
   - Object method pattern
   - Encapsulate accessor
 
