@@ -12,7 +12,7 @@ public class Hole0BowlingGame {
             if (isStrike(rolls, iRoll)) {
                 score += TOTAL_PINS + strikeBonus(rolls, iRoll);
                 iRoll++;
-            } else if (rolls[iRoll] + rolls[iRoll + 1] == TOTAL_PINS) {
+            } else if (isSpare(rolls, iRoll)) {
                 score += rolls[iRoll] + rolls[iRoll + 1] + rolls[iRoll + 2];
                 iRoll += 2;
             } else {
@@ -21,6 +21,10 @@ public class Hole0BowlingGame {
             }
         }
         return score;
+    }
+
+    private static boolean isSpare(int[] rolls, int iRoll) {
+        return rolls[iRoll] + rolls[iRoll + 1] == TOTAL_PINS;
     }
 
     private static int strikeBonus(int[] rolls, int iRoll) {
