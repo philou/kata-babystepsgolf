@@ -16,11 +16,11 @@ is_valid_commit_type() {
 
 # Check that a commit message is provided
 if [ "$#" -ne 3 ]; then
-  echo "Error: usage: ./tcr.sh <commit type> <baby step type> <details>"
+  echo "Error: usage: ./golf-tcr.sh <commit type> <baby step type> <details>"
   echo "  - commit type: one of: [$valid_types] (cf https://www.conventionalcommits.org/en/v1.0.0/)"
   echo "  - baby step type:"
-  echo "    - refactorings: https://refactoring.com/catalog/"
-  echo "    - features: https://en.wikipedia.org/wiki/Transformation_Priority_Premise"
+  echo "    - for refactorings, check: https://refactoring.com/catalog/"
+  echo "    - for features, check: https://en.wikipedia.org/wiki/Transformation_Priority_Premise"
   echo "  - details: extra info about the change"
   exit 1
 fi

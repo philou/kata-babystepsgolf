@@ -36,10 +36,10 @@ You can fill it from [here](QuickRetrospective.md)
 - SPIDR Story Splitting:
   - https://www.mountaingoatsoftware.com/uploads/blog/spidr-poster.pdf
 - [Make the change easy, then make the easy change](https://x.com/KentBeck/status/250733358307500032?lang=en)
+- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ### General
 
-- [TCR (Test && Commit || Revert) wrapper](tcr/TCR.md) utility
 - Collaborative timer for pairing or mobbing:
   [mobti.me](https://mobti.me/)
   or [agility timer](https://agility.jahed.dev/)
@@ -52,20 +52,16 @@ _The goal of this kata is to practice updating working software with the smalles
 
 ### Focus Points
 
+- Builds on TDD and TCR
 - Understanding what we call a "baby step"
 - Awareness that baby steps have names
-- Understanding the difference between Refactoring (that preserve behaviour) and Transformative (that change behaviour) baby steps.
+- Understanding the difference between Refactoring (that preserve behaviour) and Feature (that change behaviour) baby steps.
 - Learning to separate 'design' and 'feature' work
 - Understand how baby-steps support continuous refactoring within user stories
 - Understand how baby-steps support user story splitting that maximizes early value delivery
-- Tidy First
+- "Make the change easy, then do the easy change" instead of "Making the difficult change directly"
 
 ### Style & Duration
-
-This kata is best played like a golf track. It consists of 3 "holes", which are features to add to existing working software.
-Like golf holes, each feature has a 'par': a typical number of baby steps it can be implemented with. 
-You might do better than the par, or worse. You can replay a hole to reduce your number of baby steps.
-Using TCR helps us to keep track of the number of baby steps.
 
 You can practice using either of these styles:
 
@@ -74,28 +70,81 @@ You can practice using either of these styles:
 - 2-hour [Randori Kata](doc/RandoriKata.md)
 - 2-hour [Mob Kata](doc/MobProgramming.md)
 
-### TCR and Tidy First
+### Baby-steps golf
 
-This kata works better with TCR, as it takes care of running the tests at every small changes and commits everytime tests are passing.
-If pairs also push using TCR on their own branch, the facilitator can even keep track of their progress and create a leaderboard!
+This kata should be played like a Golf track! Here are the rules of Golf that are relevant to us:
 
-As TCR reverts any change that fails a test, we have to make sure the code to pass a new test is minimal. 
-That's why TCR goes hand in hand with the Tidy First flow. It's a small twist to the TDD cycle:
+- The goal of Golf is to get the ball in the hole with the minimal number of strikes
+- A Golf track consists of multiple holes
+- Each hole has a known "par" which is the typical number of strikes that a player would need 
 
-1. Add (or enable, or uncomment) a test, save
-2. TCR runs:
-3. If the tests pass, TCR commits
-4. Otherwise, TCR reverts the code
+[PerlGolf](https://wiki.c2.com/?PerlGolf) is an old programming version of the Golf: the goal is to write a program with the least characters possible.
+
+Here we are we will use another adaptation of the Golf. We will have to implement the user story with the least baby-steps possible.
+Each baby step should be represented by a commit. Commits should be small and represent an elementary modification to the Abstract Syntax Tree of the program.
+You can find a catalog of these transformations [here (refactoring)](https://refactoring.com/catalog) and [here (feature)](https://en.wikipedia.org/wiki/Transformation_Priority_Premise).
+
+### TCR and tidying first
+
+This kata comes with a custom test runner script `golf-tcr.sh`. It's an adaptation of the TCR workflow that creates baby-steps commits with custom error messages.
+These messages help us to keep track of the scoring during the game 😄
+
+TCR stands for `test && commit || revert`. Whenever you run your tests, if they pass, the code is committed, otherwise, every change is reverted.
+This nudges to:
+
+- do small changes that are safer and less of a problem when reverted
+- tweak the TDD loop:
+    - from `Red -> Green -> Refactor -> ...`
+    - to `New test is reverted to Green -> Refactor to make the change easy -> New test is committed to green with an easy change -> ...`  
+
+Here is a sample workflow:
+
+1. Add (or enable, or uncomment) a test
+2. run `./golf-tcr.sh test "add test" "..."`
+3. If the tests pass, TCR commits and pushes with a message "✅ test: Add Test: <details>"
+4. Otherwise, TCR reverts the code and the tests
    - You should have learned what is needed to pass the tests
-   - Re-disable the failing test to get back to green (this is a current limitation of the TCR tool, which only reverts the code, without the test)
-   - _Make the change easy_: through baby-steps, prepare the code to pass the test
+   - _Make the change easy_: through baby-steps, prepare the code to pass the test, run `golf-tcr.sh` at every step
    - _Do the easy change_: re-enable the test, with everything ready, you should be able to make the small code changes required to pass the test
-   - As you save, TCR will run again
+   - run `golf-tcr.sh` again
    - Depending on the tests result, Go back to 3. or 4.
 
-Facilitator will demo the beginning to show what baby-steps golf looks like, how to use TCR, and Tidy First. It also makes the exercise easier.
+Here is a sample commit log:
 
-### Holes
+![A Baby-steps golf commit log](./images/golf-commit-log.png)
+
+The facilitator will first demo what all this looks like in practice
+
+Pairs or mobs should create a custom branch, so that the facilitator can keep track of their progress and create a leaderboard!
+
+### golf-tcr.sh
+
+here is how to use `golf-tcr.sh`:
+
+```
+Usage: ./golf-tcr.sh <commit type> <baby step type> <details>
+  - commit type: one of: [feat refactor test fix chore docs style perf build ci revert] (cf https://www.conventionalcommits.org/en/v1.0.0/)
+  - baby step type:                                                                                                                        
+    - for refactorings, check: https://refactoring.com/catalog/                                                                                       
+    - for features, check: see https://en.wikipedia.org/wiki/Transformation_Priority_Premise                                                              
+  - details: extra info about the change
+```
+
+### It's a game! 😁
+
+Like any game, you can cheat and cut corners... But the facilitator is looking over your shoulder! 😉
+
+- Hiding plenty of changes in a single commit is the golf equivalent of losing your ball (in the water or outside the track).
+  You'll get a penalty of 20 points! So spend the time to find the exact baby step you are using before committing.
+- Don't leave the code in a mess! Otherwise, you risk disqualification! So take the time remove duplication and make the code readable
+
+Hopefully, it will be fun!
+
+### The Golf Track
+
+This kata consists of 4 "holes", which are features to add to existing working software.
+Each feature has a 'par': a typical number of baby steps it can be implemented with.
+You might do better than the par, or worse. You can replay a hole to reduce your number of baby steps.
 
 #### 0: Bowling Game Score (Demo)
 
