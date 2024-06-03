@@ -21,18 +21,6 @@ updates:
     schedule:
       interval: "weekly"
 
-  # Maintain dependencies for Go Modules
-  - package-ecosystem: "gomod"
-    directory: "/go"
-    schedule:
-      interval: "weekly"
-
-  # Maintain dependencies for Nuget
-  - package-ecosystem: "nuget"
-    directory: "/csharp"
-    schedule:
-      interval: "weekly"
-
   # Maintain dependencies for PIP
   - package-ecosystem: "pip"
     directory: "/python"
@@ -42,23 +30,5 @@ updates:
   # Maintain dependencies for NPM
   - package-ecosystem: "npm"
     directory: "/typescript"
-    schedule:
-      interval: "weekly"
-
-  # Maintain dependencies for Mix
-  - package-ecosystem: "mix"
-    directory: "/elixir"
-    schedule:
-      interval: "weekly"
-
-  # Maintain dependencies for Composer
-  - package-ecosystem: "composer"
-    directory: "/php"
-    schedule:
-      interval: "weekly"
-
-  # Maintain dependencies for Cargo
-  - package-ecosystem: "cargo"
-    directory: "/rust"
     schedule:
       interval: "weekly"
