@@ -20,7 +20,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// TODO Replace with a method more relevant for the kata
-export function doSomething(): number {
-  return 42;
+const TOTAL_PINS = 10;
+const FRAMES = 10;
+
+export function score(...rolls: number[]): number {
+    let score = 0;
+    let iRoll = 0;
+    for (let iFrame = 0; iFrame < FRAMES; iFrame++) {
+        if (isStrike(rolls, iRoll)) {
+            score += TOTAL_PINS + strikeBonus(rolls, iRoll);
+            iRoll++;
+        } else {
+            score += rolls[iRoll] + rolls[iRoll + 1];
+            iRoll += 2;
+        }
+    }
+    return score;
+}
+
+function strikeBonus(rolls: number[], iRoll: number): number {
+    return rolls[iRoll + 1] + rolls[iRoll + 2];
+}
+
+function isStrike(rolls: number[], iRoll: number): boolean {
+    return rolls[iRoll] === TOTAL_PINS;
 }
