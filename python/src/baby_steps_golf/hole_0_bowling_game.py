@@ -18,6 +18,23 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# TODO Replace with something more relevant for the kata
-def do_something() -> int:
-    return 42
+TOTAL_PINS = 10
+FRAMES = 10
+
+def score(*rolls: int) -> int:
+    score = 0
+    i_roll = 0
+    for _ in range(FRAMES):
+        if is_strike(rolls, i_roll):
+            score += TOTAL_PINS + strike_bonus(rolls, i_roll)
+            i_roll += 1
+        else:
+            score += rolls[i_roll] + rolls[i_roll + 1]
+            i_roll += 2
+    return score
+
+def strike_bonus(rolls: tuple[int, ...], i_roll: int) -> int:
+    return rolls[i_roll + 1] + rolls[i_roll + 2]
+
+def is_strike(rolls: tuple[int, ...], i_roll: int) -> bool:
+    return rolls[i_roll] == TOTAL_PINS
