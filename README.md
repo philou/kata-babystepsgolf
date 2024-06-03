@@ -9,14 +9,8 @@ _Let's see how many baby steps you need to solve this problem!_
 
 ## Getting Started
 
-- [C++](cpp/GETTING_STARTED.md)
-- [C#](csharp/GETTING_STARTED.md)
-- [Elixir](elixir/GETTING_STARTED.md)
-- [Go](go/GETTING_STARTED.md)
 - [Java](java/GETTING_STARTED.md)
-- [PHP](php/GETTING_STARTED.md)
 - [Python](python/GETTING_STARTED.md)
-- [Rust](rust/GETTING_STARTED.md)
 - [Typescript](typescript/GETTING_STARTED.md)
 
 ## Session Quick Retrospective
@@ -189,14 +183,8 @@ This example is used to demo the concept of baby-steps golf to participants
 
 ### Source Files
 
-- [C++](cpp)
-- [C#](csharp)
-- [Elixir](elixir)
-- [Go](go)
 - [Java](java)
-- [PHP](php)
 - [Python](python)
-- [Rust](rust)
 - [Typescript](typescript)
 
 ## License
