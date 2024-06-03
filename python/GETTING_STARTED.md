@@ -39,16 +39,16 @@ at any time by typing `exit`.
 
 You can run the kata from the command line or from your IDE of choice.
 
-You may also run it using [TCR](../tcr/TCR.md) if you want to add a bit of spice.
+You may also run it using "Golf TCR" if you want to add a bit of spice.
 
 - [From a terminal with Pytest](#running-the-kata-from-a-terminal)
-- [From a terminal with TCR](#running-the-kata-from-a-terminal-with-tcr)
+- [From a terminal with Golf TCR](#running-the-kata-from-a-terminal-with-golf-tcr)
 - [From PyCharm](#running-the-kata-from-pycharm)
-- [From PyCharm with TCR](#running-the-kata-from-pycharm-with-tcr)
+- [From PyCharm with Golf TCR](#running-the-kata-from-pycharm-with-golf-tcr)
 - [From IntelliJ](#running-the-kata-from-intellij)
-- [From IntelliJ with TCR](#running-the-kata-from-intellij-with-tcr)
+- [From IntelliJ with Golf TCR](#running-the-kata-from-intellij-with-golf-tcr)
 - [From Visual Studio Code](#running-the-kata-from-visual-studio-code)
-- [From Visual Studio Code with TCR](#running-the-kata-from-visual-studio-code-with-tcr)
+- [From Visual Studio Code with Golf TCR](#running-the-kata-from-visual-studio-code-with-golf-tcr)
 
 <a name="running-the-kata-from-a-terminal"/></a>
 
@@ -67,9 +67,9 @@ To run the tests:
 pytest
  ```
 
-<a name="running-the-kata-from-a-terminal-with-tcr"/></a>
+<a name="running-the-kata-from-a-terminal-with-golf-tcr"/></a>
 
-### Running the kata from a terminal with TCR
+### Running the kata from a terminal with Golf TCR
 
 > ***Note to Windows users***
 >
@@ -84,13 +84,11 @@ To create and start the python virtual environment:
 ./start_python_venv.sh
 ```
 
-Type the following to start TCR:
+Type the following to run TCR:
 
 ```shell
-./tcrw
+./tcrw./golf-tcr.sh style "no change" "Did not change anything!"
 ```
-
-Refer to [Using TCR](#using-tcr) section for additional details about TCR and available options.
 
 <a name="running-the-kata-from-pycharm"/></a>
 
@@ -105,9 +103,9 @@ Run all the tests in the project.
 The "**Run**" tool window should display all the executed tests.
 
 
-<a name="running-the-kata-from-pycharm-with-tcr"/></a>
+<a name="running-the-kata-from-pycharm-with-golf-tcr"/></a>
 
-### Running the kata from PyCharm with TCR
+### Running the kata from PyCharm with Golf TCR
 
 TCR is provided as a command line utility running in a terminal.
 You can run it from PyCharm directly, through leveraging on its built-in terminal.
@@ -118,19 +116,7 @@ Open PyCharm and select:
 
 `File` > `Open` > `Kata-BabyStepsGolf` > `python`
 
-#### 2. Turn off auto-save
-
-TCR is constantly watching the filesystem for changes.
-For this reason you need to turn off PyCharm's auto-save in order for it to behave as expected.
-
-`File` > `Settings` > `Appearance & Behavior` > `System Settings`
-
-Under `Autosave` section, uncheck the 2 following options:
-
-- [ ] Save files if the IDE is idle for ___ seconds
-- [ ] Save files when switching to a different application or a built-in terminal
-
-#### 3. Configure the built-in terminal to run git bash
+#### 2. Configure the built-in terminal to run git bash
 
 > ***Windows Only***
 >
@@ -146,11 +132,11 @@ Under `Application Settings` section, set the `Shell path` to `C:\Program Files\
 The above path is for a default git installation location. You may need to adjust it in case you have installed git at a
 different location.
 
-#### 4. Open a built-in terminal
+#### 3. Open a built-in terminal
 
 `View` > `Tool Windows` > `Terminal`
 
-#### 5. Start python virtual environment
+#### 4. Start python virtual environment
 
 > ***Reminder***: the command below should be run from [Kata-BabyStepsGolf/python](.) directory
 
@@ -160,17 +146,15 @@ From the built-in terminal:
 ./start_python_venv.sh
 ```
 
-#### 6. Launch TCR
+#### 5. Run Golf TCR
 
 > ***Reminder***: the command below should be run from [Kata-BabyStepsGolf/python](.) directory
 
 From the built-in terminal:
 
 ```shell
-./tcrw
+./golf-tcr.sh style "no change" "Did not change anything!"
 ```
-
-Refer to [Using TCR](#using-tcr) section for additional details about TCR and available options.
 
 <a name="running-the-kata-from-intellij"/></a>
 
@@ -212,9 +196,9 @@ From the `Project` navigator window, right click on `tests` directory and select
 
 The "**Run**" tool window should display all the executed tests.
 
-<a name="running-the-kata-from-intellij-with-tcr"/></a>
+<a name="running-the-kata-from-intellij-with-golf-tcr"/></a>
 
-### Running the kata from IntelliJ with TCR
+### Running the kata from IntelliJ with Golf TCR
 
 > ***Important***: This requires to have `IntelliJ IDEA Ultimate` edition.
 >
@@ -230,19 +214,7 @@ Open IntelliJ and select:
 
 `File` > `Open` > `Kata-BabyStepsGolf` > `python`
 
-#### 2. Turn off auto-save
-
-TCR is constantly watching the filesystem for changes.
-For this reason you need to turn off IntelliJ's auto-save in order for it to behave as expected.
-
-`File` > `Settings` > `Appearance & Behavior` > `System Settings`
-
-Under `Autosave` section, uncheck the 2 following options:
-
-- [ ] Save files if the IDE is idle for ___ seconds
-- [ ] Save files when switching to a different application or a built-in terminal
-
-#### 3. Configure the built-in terminal to run git bash
+#### 2. Configure the built-in terminal to run git bash
 
 > ***Windows Only***
 >
@@ -258,11 +230,11 @@ Under `Application Settings` section, set the `Shell path` to `C:\Program Files\
 The above path is for a default git installation location. You may need to adjust it in case you have installed git at a
 different location.
 
-#### 4. Open a built-in terminal
+#### 3. Open a built-in terminal
 
 `View` > `Tool Windows` > `Terminal`
 
-#### 5. Start python virtual environment
+#### 4. Start python virtual environment
 
 > ***Reminder***: the command below should be run from [Kata-BabyStepsGolf/python](.) directory
 
@@ -272,17 +244,15 @@ From the built-in terminal:
 ./start_python_venv.sh
 ```
 
-#### 6. Launch TCR
+#### 5. Run Golf TCR
 
 > ***Reminder***: the command below should be run from [Kata-BabyStepsGolf/python](.) directory
 
 From the built-in terminal:
 
 ```shell
-./tcrw
+./golf-tcr.sh style "no change" "Did not change anything!"
 ```
-
-Refer to [Using TCR](#using-tcr) section for additional details about TCR and available options.
 
 <a name="running-the-kata-from-visual-studio-code"/></a>
 
@@ -318,9 +288,9 @@ From the `Test Explorer` window (menu `View` > `Testing`):
 - `Configure Python Tests` > `pytest` > `tests`
 - Click on the `Play` button to run the tests.
 
-<a name="running-the-kata-from-visual-studio-code-with-tcr"/></a>
+<a name="running-the-kata-from-visual-studio-code-with-golf-tcr"/></a>
 
-### Running the kata from Visual Studio Code with TCR
+### Running the kata from Visual Studio Code with Golf TCR
 
 TCR is provided as a command line utility running in a terminal.
 You can run it from Visual Studio Code directly, through leveraging on its built-in terminal.
@@ -336,17 +306,7 @@ You can run it from Visual Studio Code directly, through leveraging on its built
 Open Visual Studio Code, choose `Open Folder`, navigate to `Kata-BabyStepsGolf` / `python`
 then click `Select Folder`.
 
-#### 3. Turn off auto-save
-
-TCR is constantly watching the filesystem for changes.
-For this reason you need to make sure that Visual Studio Code's auto-save is turned off
-in order for TCR to behave as expected.
-
-`File` > `Preferences` > `Settings`
-
-In `Text Editor` > `Files` section, make sure that `Auto Save` setting is set to `off`
-
-#### 4. Configure the built-in terminal to run git bash
+#### 3. Configure the built-in terminal to run git bash
 
 > ***Windows Only***
 >
@@ -363,11 +323,11 @@ to `C:\Program Files\Git\bin\bash.exe`
 The above path is for a default git installation location. You may need to adjust it in case you have installed git at a
 different location.
 
-#### 5. Open a built-in terminal
+#### 4. Open a built-in terminal
 
 `Terminal` > `New Terminal`
 
-#### 6. Start python virtual environment
+#### 5. Start python virtual environment
 
 > ***Reminder***: the command below should be run from [Kata-BabyStepsGolf/python](.) directory
 
@@ -377,39 +337,12 @@ From the built-in terminal:
 ./start_python_venv.sh
 ```
 
-#### 6. Launch TCR
+#### 6. Run TCR
 
 > ***Reminder***: the command below should be run from [Kata-BabyStepsGolf/python](.) directory
 
 From the built-in terminal:
 
 ```shell
-./tcrw
+./golf-tcr.sh style "no change" "Did not change anything!"
 ```
-
-Refer to [Using TCR](#using-tcr) section for additional details about TCR and available options.
-
-<a name="using-tcr"/></a>
-
-## Using TCR
-
-### Cheat Sheet
-
-Here are the main shortcuts available once TCR utility is running:
-
-| Shortcut  | Description                                  |
-|-----------|----------------------------------------------|
-| `o` / `O` | Open in browser (with `web` subcommand only) |
-| `d` / `D` | Enter driver role                            |
-| `n` / `N` | Enter navigator role                         |
-| `t` / `T` | Query timer status                           |
-| `p` / `P` | Toggle on/off git auto-push                  |
-| `l` / `L` | Pull from remote                             |
-| `s` / `S` | Push to remote                               |
-| `q` / `Q` | Quit current role / Quit TCR                 |
-| `?`       | List available options                       |
-
-### Additional Details
-
-Refer to [TCR - Test && Commit || Revert](../tcr/TCR.md) page
-for additional details and explanations about TCR utility.
