@@ -13,7 +13,7 @@ public class Hole0BowlingGame {
                 score += TOTAL_PINS + strikeBonus(rolls, iRoll);
                 iRoll++;
             } else if (rolls[iRoll] + rolls[iRoll + 1] == TOTAL_PINS) {
-                score += rolls[iRoll] + rolls[iRoll + 1];
+                score += rolls[iRoll] + rolls[iRoll + 1] + rolls[iRoll+2];
                 iRoll += 2;
             } else {
                 score += rolls[iRoll] + rolls[iRoll + 1];
